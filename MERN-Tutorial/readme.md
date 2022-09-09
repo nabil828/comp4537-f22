@@ -14,7 +14,7 @@ Table of Contents
 * [MongoDB and REST API - Round Two](#mongodb-and-rest-api---round-two)
 * [JS filter and map and REST API - Round Three](#js-filter-and-map-and-rest-api---round-three)
    * [to get only the temperature of a specific city.](#to-get-only-the-temperature-of-a-specific-city)
-* [React and REST API - Round Four [Optional]](#react-and-rest-api---round-four-optional)
+* [React and REST API - Round Four ](#react-and-rest-api---round-four)
 
 ---
 Check out the complete server code [here](./server/server.js) and client code [here](./client/).
@@ -552,7 +552,7 @@ to get only the temperature of a specific city.
 
 ---
 
-# React and REST API - Round Four [Optional]
+# React and REST API - Round Four 
 Now our server is ready to serve but what about our client. So far we had been testing the server by mostly entering the routes directly in the browser for GET requests and using Postman for the PUT & DELETE.
 
 We will create a simple client interface using [React.js](https://reactjs.org/) to get client like the following:
