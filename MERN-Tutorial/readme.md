@@ -557,9 +557,9 @@ Now our server is ready to serve but what about our client. So far we had been t
 
 We will create a simple client interface using [React.js](https://reactjs.org/) to get client like the following:
 
-![react demo](images/4.gif)
+<!-- ![react demo](images/4.gif) -->
 
-by clicking on these two react links, each city weather is going to be loaded into the page without the page getting reloaded. All the magic will happen in the background. React will contact the Express server and retrieve the weather of the selected city.
+<!-- by clicking on these two react links, each city weather is going to be loaded into the page without the page getting reloaded. All the magic will happen in the background. React will contact the Express server and retrieve the weather of the selected city. -->
 
 - [[Source]](https://reactjs.org/docs/create-a-new-react-app.html) First, we need to create another directory by executing the following:
 
@@ -896,6 +896,9 @@ export default City
 ```
 The only new concept here, is how we have [destructured](https://www.w3schools.com/react/react_es6_destructuring.asp) the passed prop to the `aCity` JS object. And then again, [destrucured](https://www.w3schools.com/react/react_es6_destructuring.asp) this object to three variables.
 
+HEre is the how this front end looks like now
+
+![final](https://cdn.discordapp.com/attachments/1017862173881544775/1017883184098197574/unknown.png)
 
 .. And that is it I guess. Please let me know if you have any questions!
 <br>
