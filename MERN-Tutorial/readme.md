@@ -314,6 +314,7 @@ Before talking about the other REST operations, namely PUT and DELETE, let us bu
 - First, let us install mongodb using our terminal
 
 ```
+sudo apt-get update
 sudo apt-get install mongodb
 ```  
 and run the mongodb service Using
