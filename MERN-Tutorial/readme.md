@@ -73,7 +73,7 @@ added 50 packages from 37 contributors and audited 50 packages in 4.488s
 found 0 vulnerabilities
 ```
 
-- Open the server folder using atom `atom ~/mern_demo/server` and create a new file `server.js`
+- Open the server folder using atom/Vscode `atom ~/mern_demo/server` and create a new file `server.js`
 
 - change the entry point to `server.js` in the `package.josn` file. This the home page of the server when it the http://localhost:port url s requested.  
 
@@ -784,126 +784,121 @@ This code we will render an ordered list inside an HTML element with an ID equal
 So that is it. We now have a simple, clean, & working React client:
 ![react client](images/15.jpg)
 
-- Now I want to show you the final state of my code and go over it in more details.
-
-- Create `App.js` file and have this code copied inside it:
-
+- Next, Let us try to design a simple weather map that lists the weather for all the cities in our mongodb. Check out the layout of the app components.
+![weather app](https://cdn.discordapp.com/attachments/1017862173881544775/1017862190281277460/unknown.png)
+There are three components for the front end, *Header*, *List of Cities*, and a *City*. These visual components will correspond to react components later. 
+- Let us start off with creating the components in react. I will create new files `Header.js` and `Cities.js` and import them in `index.js`:
+```js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import Header from './Header'
+import Cities from './Cities';
+import './index.css'
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <>
+    <Header />
+    <Cities />
+  </>
+);
 ```
-import {Route,Switch, BrowserRouter, Link} from "react-router-dom"
-import {useState, useEffect} from 'react'
+This HTML-like code passed to `render()` method is called [JSX](https://reactjs.org/docs/introducing-jsx.html). Think about it as a mixture of HTML and JS. We will be adding JS to it soon. 
 
-function Heading(){
-  return (<h1> Weather webservice </h1>);
-}
+And if you are wondering what is that tag without a name, `<>`. This is called [React Fragment](https://reactjs.org/docs/fragments.html). It is just a dummy div to contain everything we are passing to the `render()` method.
 
-function Card(props){
-  const [city, setCity] = useState(null);
-  console.log("props.name" + props.name);
-  useEffect( () => {
-    fetch("/cities/" + props.name)
-    .then(response => response.json())
-    .then(data => setCity(data[0]))
-  },[props.name]
+Here is `Header.js`:
+```js
+import React from 'react'
+
+function Header() {
+  return (
+    <h1>This is a HEADER Componenet</h1>
   )
-
-
-  console.log(city);
-      if(city){
-        return (
-          <>
-            <h1> {city.name} </h1>
-            <ul>
-              <li> Temperature: {city.temperature}</li>
-              <li> Description: {city.description}</li>
-            </ul>
-          </>
-        );
-      }else
-      return <h1> No User</h1>
-
 }
-function App() {
+
+export default Header
+```
+It has only a function the correspond to what we meant earlier when we referred to a [react component](https://reactjs.org/docs/react-component.html). Whatever we return from this function is going to be the visualized "HTML" layout of the component. Apparently, this *Header* component is just an `<h1>` HTML tag.
+
+and here is the complete code `Cities.js`
+```js
+import React, { useEffect, useState } from 'react'
+import City from './City'
+function Cities() {
+
+  const [cities, setCities] = useState([])
+  const url = "http://localhost:5000/cities"
+  useEffect(() => {
+    fetch(url)
+      .then((resp) => { return resp.json() })
+      .then((jsonedResp) => { setCities(jsonedResp)})
+  }, [])
+
+  return (
+    <>
+      Cities Component
+      <hr />
+      {
+        cities.map((aCity) => {
+        return <City aCity={aCity} />
+        })
+      }
+    </>
+  )
+}
+
+export default Cities
+```
+Let us break it down to
+
+1- The `useState()` Hook. We will explain [Hooks](https://reactjs.org/docs/hooks-intro.html) Later, but for now, think of them as the weapons that will assist us in building this web app. [`useState()`](https://reactjs.org/docs/hooks-state.html) hooks is the first and the most important one.
+> It holds a state across multiple renders
+
+If you remember, in static HTML pages, whenever you reload the page, all the JS variables will reset their values to the initial value. In react, it will do multiple renders whenever *state* variables change. We don't need to access the [DOM](https://www.w3schools.com/js/js_htmldom.asp) whenever that change happens. React will take care of that for us, if and only if, we create these variables using the `usestate()` hook. In this component, we need to fetch the `cities` from the server and re-render the list of cities whenever the fetch is done. 
+
+2- The `useEffect()` Hook. We will use the hook whenever there is a *side effect* needed that should trigger based on some condition. In a nutshell, we need to trigger the `fetch()` inside this hook to fetch the cities information from the server. This *side effect* should trigger only once for now. Of course we can change that condition later by manipulating the second argument of this h👀k. BTW, this second argument is called the dependency list.   
+
+Side note here, both `useEffect()` and `useState()` hooks are functions imported from `react` module. `useEffect()` does not return anything but `useState()` returns an array of size two. First element of this array is the state variable and second is a [function handle]() to set this state variable value.  A function handle is just a variable that is has a function as a value. Meaning, we can call the function using the variable identifier.
+
+3- The `fetch()` function.  We will be explaining this browser API later. For now, it is just an tool that we use to communicate with an HTTP server. WE passed the URL as string argumnt to it. It returns a promise and hence we either have to `await` for it or use `.then` to wait for the promise to be fulfilled. Ideally, we want also to catch the promise if it got rejected. More on [JS Async](JS Async
+) later.  
+
+
+4- The `props=` [prop](https://reactjs.org/docs/components-and-props.html). A *prop* is way to pass argument to a component. Remember that a react component correspond to a JS function. Hence, it make since to pass info from a component to another. In previous code, we want to pass info from the `<Cities>` to the `<City>` component and we have done this using the props.
+
+Side Note: Notice that in JSX, whenever you need to write JS, you need the `{}` braces.
+
+5- the JS `map()` function. Review JS array's function [here](https://www.w3schools.com/jsref/jsref_map.asp).
+
+Phew! almost there.
+
+Let us check the last file, `City.js` in which we have the last compoenent, `<City>`:
+```js
+import React from 'react'
+
+function City({ aCity }) {
+  const { tempreture, name, description } = aCity;
+
   return (
     <div>
-      <Heading/>
-
-      Select a city:
-      <ul>
-        <li><Link to="/Vancouver"> Vancouver </Link> </li>
-        <li><Link to="/Tokyo"> Tokyo </Link> </li>
-      </ul>
-
-        <Switch>
-        <Route
-          path="/Vancouver"
-          render={(props) => (
-             <Card name='Vancouver'/>
-           )}
-        />
-        <Route
-          path="/Tokyo"
-          render={(props) => (
-             <Card name='Tokyo'/>
-           )}
-        />
-
-      </Switch>
+      <h4>
+        {name} temp. is {tempreture}
+      </h4>
+      <p>
+        {name} weather {description}
+      </p>
+      <hr />
     </div>
-
-  );
+  )
 }
-export default App;
+
+export default City
 ```
-And modify `index.js` to match the following:
-```
-import App from "./App.js";
-import {BrowserRouter} from 'react-router-dom';
-
-var React = require('react');
-var ReactDom = require("react-dom");
+The only new concept here, is how we have [destructured](https://www.w3schools.com/react/react_es6_destructuring.asp) the passed prop to the `aCity` JS object. And then again, [destrucured](https://www.w3schools.com/react/react_es6_destructuring.asp) this object to three variables.
 
 
-ReactDom.render(
-  <BrowserRouter>
-  <App/>
-  </BrowserRouter>
-  , document.getElementById("root"));
-```
-This is it!
-Let us break this code down:
- - First, notice in `index.js` how we surrounded the `App` tag with `BrwoserRouter` tag.
- `BrwoserRouter` indicates that you plan to use react routes in your client. Check [react-router-dom](https://reactrouter.com/web/guides/quick-start) and install it in the `client` directory. This will allow us, for example
- to select and load the weather for different cities.
- - As for the `App` tag itself, notice how the letter A is in capital case. This is not an ordinary HTML tag. It is a special React.js tag
- called a *component*. Think about the user interface (UI) as a group of independent components.
- - Now we choose to write the code of the `App` component in a separate file but it is not a must.
- - In the `App.js` file we have two functions
-  - `App()` is the function that going to return the HTML code the that would replace the `App` tag. We can that first we build a simple navigation list with a special tag called `Link` instead of the usual `a` in HTML. This `Link` tag will allow us to make AJAX requests to update the page without reloading it. Hence a finer and faster rendering! Here is navigation page build inside the `App` component:
-  ```
-  Select a city:
-  <ul>
-    <li><Link to="/Vancouver"> Vancouver </Link> </li>
-    <li><Link to="/Tokyo"> Tokyo </Link> </li>
-  </ul>
-  ```
-  Next, we have the
-  ```
-  <Switch>
-  <Route>
-  ```
-  code which will handle client routes to the paths `/Vancouver` & `/Tokyo` by *again* calling another component named `Card` and passing the city names using an argument called `props`.
-
-  - `Card()` is the function that will return the HTML of the `Card` component. Here we want to list the city name, temperature, and description of the city's weather.
-    - First, we are using [`fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) to construct an HTTP GET request to our server and pass the city name that we are interested in. You may use it for any other REST request like POST, PUT, or DELETE.
-    - If you are asking your self: how would the `fetch()` method find the IP address and the port number of the server, then you are asking the right question. Because it can not communicate with the server without us directing clint to address of the server by add this line the `package.json` file just before the dependencies `"proxy" : "http://localhost:5000/",`
-    - Second, we are using `useState` Hook to pass the response from the server to the HTML code (Aka maintaining state) [[Source]](https://reactjs.org/docs/hooks-intro.html).
-    - Third, we use `useEffect` Hook is used to execute functions after a component gets rendered to “perform side effects”.
-     Here, to `fetch` the server every time the user call the `Card` component passing different `props` argument [TL;DR](https://stackoverflow.com/a/55481525/2452907).  
-
-Mmm.. and that is it I guess. Please let me know if you have any questions!
+.. And that is it I guess. Please let me know if you have any questions!
 <br>
-More Sources: [1](http://forum.espruino.com/conversations/1364/)
-
 ---
 
 <!-- ## Check Your Understanding
