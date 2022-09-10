@@ -861,13 +861,12 @@ If you remember, in static HTML pages, whenever you reload the page, all the JS 
 
 Side note here, both `useEffect()` and `useState()` hooks are functions imported from `react` module. `useEffect()` does not return anything but `useState()` returns an array of size two. First element of this array is the state variable and second is a [a function handle](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) to set this state variable value.  A function handle is just a variable that is has a function as a value. Meaning, we can call the function using the variable identifier.
 
-3- The `fetch()` function.  We will be explaining [this browser API](https://www.w3schools.com/jsref/api_fetch.asp) later. For now, it is just a tool that we use to communicate with an HTTP server. We passed the URL as string argument to it. It returns a promise and hence we either have to `await` for it or use `.then` to wait for the promise to be fulfilled. Ideally, we want also to catch the promise if it got rejected. More on [JS Async](JS Async
-) later.  
+3- The `fetch()` function.  We will be explaining [this browser API](https://www.w3schools.com/jsref/api_fetch.asp) later. For now, it is just a tool that we use to communicate with an HTTP server. We passed the URL as string argument to it. It returns a promise and hence we either have to `await` for it or use `.then` to wait for the promise to be fulfilled. Ideally, we want also to catch the promise if it got rejected. More on [JS Async](https://www.w3schools.com/js/js_async.asp) later.  
 
 
-4- The `props=` [prop](https://reactjs.org/docs/components-and-props.html). A *prop* is way to pass argument to a component. Remember that a react component correspond to a JS function. Hence, it make since to pass info from a component to another. In previous code, we want to pass info from the `<Cities>` to the `<City>` component and we have done this using the props.
+4- The `props=` . A [prop](https://reactjs.org/docs/components-and-props.html) is a way to pass argument to a component. Remember that a react component corresponds to a JS function. Hence, it makes since to pass data from a component to another. In the previous code, we want to pass the city json object fetched from the server and stored in the state variable `cities` from the `<Cities>` component to the `<City>` and we can only do this using *props*.
 
-Side Note: Notice that in JSX, whenever you need to write JS, you need the `{}` braces.
+Sidenote: Notice that in JSX, whenever you need to write JS, you need the `{}` braces.
 
 5- the JS `map()` function. Review JS array's function [here](https://www.w3schools.com/jsref/jsref_map.asp).
 
@@ -895,13 +894,13 @@ function City({ aCity }) {
 
 export default City
 ```
-The only new concept here, is how we have [destructured](https://www.w3schools.com/react/react_es6_destructuring.asp) the passed prop to the `aCity` JS object. And then again, [destrucured](https://www.w3schools.com/react/react_es6_destructuring.asp) this object to three variables.
+The only new concept here, is how we have [destructured](https://www.w3schools.com/react/react_es6_destructuring.asp) the passed prop(s) to the `aCity` JS object. And then again, [destrucured](https://www.w3schools.com/react/react_es6_destructuring.asp) this object to three variables.
 
 HEre is the how this front end looks like now
 
-![final](https://cdn.discordapp.com/attachments/1017862173881544775/1017883184098197574/unknown.png)
+![final](https://cdn.discordapp.com/attachments/1017862173881544775/1017954140820881500/unknown.png)
 
-.. And that is it I guess. Please let me know if you have any questions!
+.. And that's it I guess. Please let me know if you have any questions!
 <br>
 ---
 
