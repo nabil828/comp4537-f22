@@ -787,7 +787,7 @@ So that is it. We now have a simple, clean, & working React client:
 
 - Next, Let us try to design a simple weather map that lists the weather for all the cities in our mongodb. Check out the layout of the app components.
 ![weather app](https://cdn.discordapp.com/attachments/1017862173881544775/1017862190281277460/unknown.png)
-There are three components for the front end, *Header*, *List of Cities*, and a *City*. These visual components will correspond to react components later. 
+There are three components for the frontend, *Header*, *List of Cities*, and a *City*. These visual components will correspond to react components later. 
 - Let us start off with creating the components in react. I will create new files `Header.js` and `Cities.js` and import them in `index.js`:
 ```js
 import React from 'react';
@@ -819,9 +819,9 @@ function Header() {
 
 export default Header
 ```
-It has only a function the correspond to what we meant earlier when we referred to a [react component](https://reactjs.org/docs/react-component.html). Whatever we return from this function is going to be the visualized "HTML" layout of the component. Apparently, this *Header* component is just an `<h1>` HTML tag.
+It has only a function that correspond to what we meant earlier when we referred to a [react component](https://reactjs.org/docs/react-component.html). Whatever we return from this function is going to be the visualized "HTML" layout of the component. Apparently, this *Header* component is just an `<h1>` HTML tag.
 
-and here is the complete code `Cities.js`
+and here is the complete code of `Cities.js`
 ```js
 import React, { useEffect, useState } from 'react'
 import City from './City'
@@ -852,16 +852,16 @@ export default Cities
 ```
 Let us break it down to
 
-1- The `useState()` Hook. We will explain [Hooks](https://reactjs.org/docs/hooks-intro.html) Later, but for now, think of them as the weapons that will assist us in building this web app. [`useState()`](https://reactjs.org/docs/hooks-state.html) hooks is the first and the most important one.
+1- The `useState()` Hook. We will explain [Hooks](https://reactjs.org/docs/hooks-intro.html) Later, but for now, think of them as the weapons that will assist us in building this web app. [`useState()`](https://reactjs.org/docs/hooks-state.html) hook is the first and the most important one.
 > It holds a state across multiple renders
 
-If you remember, in static HTML pages, whenever you reload the page, all the JS variables will reset their values to the initial value. In react, it will do multiple renders whenever *state* variables change. We don't need to access the [DOM](https://www.w3schools.com/js/js_htmldom.asp) whenever that change happens. React will take care of that for us, if and only if, we create these variables using the `usestate()` hook. In this component, we need to fetch the `cities` from the server and re-render the list of cities whenever the fetch is done. 
+If you remember, in static HTML pages, whenever you reload the page, all the JS variables will reset their values to the initial value. In react, it will do multiple renders whenever a *state* variable changes. We don't need to access the [DOM](https://www.w3schools.com/js/js_htmldom.asp) whenever that change happens. React will take care of that for us, if and only if, we create these variables using the `usestate()` hook. In this component, we need to fetch the `cities` from the server and set the list of cities to the `cities` state variable. 
 
-2- The `useEffect()` Hook. We will use the hook whenever there is a *side effect* needed that should trigger based on some condition. In a nutshell, we need to trigger the `fetch()` inside this hook to fetch the cities information from the server. This *side effect* should trigger only once for now. Of course we can change that condition later by manipulating the second argument of this h👀k. BTW, this second argument is called the dependency list.   
+2- The `useEffect()` Hook. We will use the hook whenever there is a *side effect* needed that should be triggered based on some condition. In a nutshell, we need to trigger the `fetch()` inside this hook to fetch the cities information from the server. This *side effect* should trigger only once for now. Of course we can change that condition later by manipulating the second argument of this h👀k. BTW, this second argument is called the *dependency list*.   
 
-Side note here, both `useEffect()` and `useState()` hooks are functions imported from `react` module. `useEffect()` does not return anything but `useState()` returns an array of size two. First element of this array is the state variable and second is a [function handle]() to set this state variable value.  A function handle is just a variable that is has a function as a value. Meaning, we can call the function using the variable identifier.
+Side note here, both `useEffect()` and `useState()` hooks are functions imported from `react` module. `useEffect()` does not return anything but `useState()` returns an array of size two. First element of this array is the state variable and second is a [a function handle](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function) to set this state variable value.  A function handle is just a variable that is has a function as a value. Meaning, we can call the function using the variable identifier.
 
-3- The `fetch()` function.  We will be explaining this browser API later. For now, it is just an tool that we use to communicate with an HTTP server. WE passed the URL as string argumnt to it. It returns a promise and hence we either have to `await` for it or use `.then` to wait for the promise to be fulfilled. Ideally, we want also to catch the promise if it got rejected. More on [JS Async](JS Async
+3- The `fetch()` function.  We will be explaining [this browser API](https://www.w3schools.com/jsref/api_fetch.asp) later. For now, it is just a tool that we use to communicate with an HTTP server. We passed the URL as string argument to it. It returns a promise and hence we either have to `await` for it or use `.then` to wait for the promise to be fulfilled. Ideally, we want also to catch the promise if it got rejected. More on [JS Async](JS Async
 ) later.  
 
 
