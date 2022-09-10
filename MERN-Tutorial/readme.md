@@ -896,7 +896,7 @@ export default City
 ```
 The only new concept here, is how we have [destructured](https://www.w3schools.com/react/react_es6_destructuring.asp) the passed prop(s) to the `aCity` JS object. And then again, [destrucured](https://www.w3schools.com/react/react_es6_destructuring.asp) this object to three variables.
 
-HEre is the how this front end looks like now
+HEre is the how this front end looks like now:
 
 ![final](https://cdn.discordapp.com/attachments/1017862173881544775/1017954140820881500/unknown.png)
 
