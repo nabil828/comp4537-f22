@@ -15,7 +15,8 @@
 -  Path Module
 -  fs Module
 -  Sync Vs Async
--  Http Intro
+-  Http Module
+<!-- -  Http Intro
 -  NPM Info
 -  NPM Command
 -  First Package
@@ -71,7 +72,7 @@
 -  Methods - PUT
 -  Methods - DELETE
 -  Express Router - Setup
--  Express Router - Controllers
+-  Express Router - Controllers -->
 
 ---
 ##  What Is Node.js
@@ -804,17 +805,37 @@ var y = "rubbish"
 
 const start = async () => {
   try {
-    x = await readFilePromise('./t1.txt')
-    y = await readFilePromise('./t2.txt')
+    x = await readFilePromise('./t1.txt', 'utf-8')
+    y = await readFilePromise('./t2.txt', 'utf-8')
   }
   catch (err) {
     console.log(err);
   }
-  writeFilePromise('./t3.txt', `${x}${y}`, (err) => { if (err) console.log(err); })
+  await writeFilePromise('./t3.txt', `${x}${y}`, (err) => { if (err) console.log(err); })
 }
 
 start()
 
-
 ```
 
+### Http Module
+
+```js
+const http = require('http')
+
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    res.end('Welcome to our home page')
+  } else if (req.url === '/about') {
+    res.end('Here is our short history')
+  } else {
+    res.end(`
+    <h1>Oops!</h1>
+    <p>We can't seem to find the page you are looking for</p>
+    <a href="/">back home</a>
+    `)
+  }
+})
+
+server.listen(5000)
+```
