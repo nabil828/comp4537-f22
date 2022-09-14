@@ -748,6 +748,41 @@ getText('./t1.txt')
 ```
 
 But the ~~callback~~ promise hell is also there.
+The workaround here is to return a promise from `getText` and have all the `then`s in one level:
+
+```js
+const { readFile, writeFile } = require('fs')
+
+
+const getText = (fName) => {
+  return new Promise((resolve, reject) => {
+    readFile(fName, 'utf-8', (err, result) => {
+      if (err) {
+        reject(err)
+      }
+      else {
+        resolve(result)
+      }
+    })
+  })
+}
+
+var x = ""
+var y = ""
+
+getText('./t1.txt')
+  .then((result) => {
+    x = result
+    return getText('./t2.txt')
+  })
+  .then((result) => {
+    y = result
+    // console.log(result);
+    writeFile('./t3.txt', `${x}${y}`, (err) => { if (err) console.log("write" + err); })
+  })
+  .catch((err) => { console.log("catch" + err); })
+
+```
 
 Let us move to the next approach using *async/await*:
 
@@ -768,12 +803,13 @@ const getText = (fName) => {
   })
 }
 
-var x = "rubbish"
-var y = "rubbish"
+
 
 
 
 const start = async () => {
+  var x = "rubbish"
+  var y = "rubbish"
   try {
     x = await getText('./t1.txt')
     console.log(x);
