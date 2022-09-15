@@ -1,6 +1,9 @@
 # DB Weekly Schedule 
+
+---
 ## Week 1
 - 
+
 ## Week 2
 - Introduction
 - Basic Commands
@@ -10,4 +13,6 @@
 - Update Commands
 - Delete Commands
 - 
+
 ## Week 3
+- tbd

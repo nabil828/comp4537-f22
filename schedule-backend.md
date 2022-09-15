@@ -1,4 +1,6 @@
 # Frontend Weekly Schedule 
+
+---
 ## Week 1
 - Create-React-App 
 -  Install Create-React-App 
