@@ -1,0 +1,98 @@
+use('test')
+
+// db.unicorns.find(
+//   {name: "Aurora"}, // selection
+//   {} 
+//   ); 
+
+
+// db.unicorns.find(
+//   {
+//     name: "Aurora" 
+//   }, // selection
+//   {
+//     weight: 1,
+//     name: 1,
+//     loves: 0
+//     } // projection
+//   ); 
+
+
+// db.unicorns.find();
+
+
+// db.unicorns.find(
+//   {
+//     gender: 'm',
+//   	weight: {$gt: 700}
+//   } // ?
+//   )
+
+// db.unicorns.find(
+//     { //selection
+//       gender: {$ne: 'f'},
+//       weight: {$gte: 701}
+//     }
+//   )
+
+
+// db.unicorns.find({
+// 	vampires: {$exists: false}})
+
+
+// db.unicorns.find(
+//   {
+//     $and : [ 
+//       {loves: { $in : ["grape"]}}, 
+//       {loves: {$in : ["carrot"]}}
+//     ]
+//   }
+//   )
+
+// Get all female unicorns which either love apples or weigh less than 500 pounds. 
+// t
+// db.unicorns.find(
+//   {
+//     // $and : [ 
+//       // {
+//          gender: "f" 
+//         //  }
+//          ,
+//       // { 
+//         $or: [
+//         {loves: { $in : ["apple"]}}, 
+//         {weight: {$lt : 500}}
+//       ]
+//       // }
+//     // ]
+//   }
+//   )
+
+
+// db.unicorns.find({
+//   "_id": ObjectId("63238c93b7aebb39c8cac5b6")
+// })
+
+
+// db.unicorns.replaceOne({name: 'Roooooodles'},
+// 	{weight: 590})
+
+
+// db.unicorns.drop()
+
+// db.unicorns.update(
+//   {name: 'Roooooodles'},
+// 	{
+//     $set: {weight: 590}
+//   }
+//   )
+
+// db.unicorns.update(
+//   {name: 'Aurora'},
+// 	{
+//     $push: {loves: 'sugar'}
+//     }
+//   )
+
+
+db.unicorns.remove({})

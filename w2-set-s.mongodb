@@ -1,0 +1,68 @@
+use("test")
+
+// db.unicorns.find(
+//   { 
+//     // selection
+//     "gender": "m"
+//   },{
+//     // projection
+//     name: 1,
+//     gender : 0,
+//     _id: 0
+//   }
+// )
+
+
+// This returns any unicorn who loves 'apple' or 'carrot'.
+
+// db.unicorns.find({
+//   // $or: [
+//     // { 
+//       loves : {$in : ["apple", "carrot"]}
+//     // },
+//     // {
+//     //   loves : {$in : ["carrot"]}
+//     // }
+//   // ]
+// }).count()
+
+
+// return all female unicorns which either love apples or weigh less than 500 pounds.
+
+// db.unicorns.find({
+//   $and : [ {
+//     gender: "f"
+//   },{
+//     $or : [
+//       {loves: {$in: ["apple"]}},
+//       {weight: {$lt: 500}}
+//     ]
+//   }]
+// }).count()
+
+
+
+// db.unicorns.update({name: 'Roooooodles'},
+// 	{weight: 590})
+
+
+  // db.unicorns.update(
+  //   {name: 'Roooooodles'},
+	//   {$set: {weight: 590}},
+  //   {upsert: true}
+  // )
+
+  // db.unicorns.find({_id: ObjectId("6323a8f778a601039482d635") }, {});
+
+
+// db.unicorns.find().sort(
+//   {dob: -1}
+//   )
+
+
+
+db.unicorns.find({
+ "dob": 
+      Date("1973-02-10T06:10:00Z")
+    
+})
