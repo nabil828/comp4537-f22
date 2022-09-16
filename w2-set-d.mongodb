@@ -1,0 +1,92 @@
+use ("test")
+
+
+// db.unicorns.find({ // selection
+//   "gender": "f",
+//   "weight": {$gt : 500}
+// },{ //projection
+//   "name": 1,
+//   "_id": 0
+// })
+
+
+// db.unicorns.find({
+//   vampires: {$exists: 0}
+// })
+
+
+// This returns any unicorn who loves 'apple' or 'carrot'.
+// db.unicorns.find({
+//   loves: {$in: ["apple", "carrot"]}
+// }).count()
+
+
+
+
+// db.unicorns.find({
+//   $or : [
+//     {"gender": "f"},
+//     {loves: {$in: ["apple"]}}
+//   ]
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// The above will return all female unicorns which either love apples or weigh less than 500 pounds.
+
+
+
+// db.unicorns.find({
+//   // $and: [
+//     "gender": "f",
+//     $or : [
+//       {loves: {$in : ["apple"]}},
+//       {weight : {$lt: 500}}
+//     ]
+//   // ]
+// })
+
+// db.unicorns.update({name: 'Roooooodles'},
+// 	{weight: 590})
+
+
+// db.unicorns.update({name: 'Roooooodles'},
+// 	{$set: {weight: 590}})
+
+// db.unicorns.update(
+//     {weight: 590},
+//     {
+//       $set: {
+//           name: 'Roooooodles',
+//           dob: new Date(1979, 7, 18, 18, 44),
+//           loves: ['apple'],
+//           gender: 'm',
+//           vampires: 99,
+//           weight: 591
+//         }
+//     }
+//   )
+
+
+db.unicorns.find().sort({weight: 1}).skip(1).limit(2)
+
+
+CRUD
+C insert()
+R find()
+U update9()
+D remove()
