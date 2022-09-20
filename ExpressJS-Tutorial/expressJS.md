@@ -129,3 +129,21 @@ app.get('/users/:userId/books/:bookId', (req, res) => {
 |res.send()	          | Send a response of various types.|
 |res.sendFile()	      | Send a file as an octet stream.|
 |res.sendStatus()	    | Set the response status code and se|nd its string representation as the response body.|
+
+
+
+# req.body
+> Contains key-value pairs of data submitted in the request body. 
+
+```js
+const app = require('express')()
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.json()) // for parsing application/json
+
+
+app.post('/profile',  (req, res) => {
+  console.log(req.body)
+  res.json(req.body)
+})
+```
