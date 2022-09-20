@@ -16,16 +16,15 @@
 -  fs Module
 -  Sync Vs Async
 -  Http Module
-<!-- -  Http Intro
--  NPM Info
--  NPM Command
--  First Package
--  Share Code
+-  Http Intro
+-  NPM 
+<!-- -  First Package -->
+<!-- -  Share Code -->
 -  Nodemon
 -  Uninstall
 -  Global Install
 -  Package-Lock.Json
--  Important Topics Intro
+<!---  Important Topics Intro
 -  Event Loop
 -  Event Loop Slides
 -  Event Loop Code Examples
@@ -95,6 +94,11 @@ https://nodejs.dev/en/learn/
 | **No** File system | File system      |
 | Window Object      | No Window Object |
 
+
+[Read More - https://nodejs.dev/en/learn/differences-between-nodejs-and-the-browser/](
+https://nodejs.dev/en/learn/differences-between-nodejs-and-the-browser/
+)
+
 ---
 ## Download & Install Node
 [Check this link and follow instructions.](https://nodejs.org/en/)
@@ -158,6 +162,9 @@ printNameAndAge()
 ```
 Try to *log* `module.exports` and `module` to understand how this global variable is used to share info between JS files.
 
+[Read More - https://nodejs.dev/en/learn/expose-functionality-from-a-nodejs-file-using-exports/](https://nodejs.dev/en/learn/expose-functionality-from-a-nodejs-file-using-exports/)
+
+---
 ### Built-in Modules
 Node.js has a [list of built-in modules](https://www.w3schools.com/nodejs/ref_modules.asp) that you can use without further installation. We will be looking over, `os`, `path`, `fs`, and `http` modules soon.
 
@@ -674,7 +681,7 @@ t2
 # Sync Vs Async
 Opening files, requesting HTTP from remote servers, waiting for user input, or performing complex tasks should inspire us to take the proper action asynchronously.  
 
-Let us repeat the previous example but using *async* functions this time.
+Let us repeat the previous example but using *asynchronous* functions this time.
 
 ```js
 const { readFile, writeFile } = require('fs')
@@ -711,6 +718,9 @@ readFile('./t1.txt', 'utf-8', (err, result) => {
 Notice here, how we start to have the *call back hell* which make the code less readable. 
 
 Here how to rewrite the previous code using *promises*:
+> A promise is commonly defined as a proxy for a value that will eventually become available.
+
+
 
 ```js
 const { readFile, writeFile } = require('fs')
@@ -784,6 +794,8 @@ getText('./t1.txt')
 
 ```
 
+[Read More - https://nodejs.dev/en/learn/understanding-javascript-promises/](https://nodejs.dev/en/learn/understanding-javascript-promises/)
+
 Let us move to the next approach using *async/await*:
 
 ```js
@@ -855,6 +867,9 @@ start()
 
 ```
 
+[Read more - https://nodejs.dev/en/learn/differences-between-nodejs-and-the-browser/](https://nodejs.dev/en/learn/differences-between-nodejs-and-the-browser/)
+
+---
 ### Http Module
 
 ```js
@@ -876,3 +891,85 @@ const server = http.createServer((req, res) => {
 
 server.listen(5000)
 ```
+
+---
+# NPM 
+Similar to Google Play Store or Apple App Store, Node.js has the [**npm**](https://www.npmjs.com/) package manager to download and install new packages/modules locally. There are more than million packages out there to choose from. For example, [Express.js](https://www.npmjs.com/package/express.js) is one of the most popular ones. 
+
+Related Commands
+```
+npm // Global Command
+npm --version 
+npm install <package name> // to add local dependency/package/module
+npm install -g <package name> // to add global dependency 
+sudo npm install  <package name> // Mac
+```
+
+
+---
+# Package.json
+It holds various metadata related to the project.
+
+The file will be created if you run the following command:
+
+```
+npm init // step by step, skip/keep the defualt answer by pressing enter
+npm init -y // skip all the questions by saying yes to all and give the default answers
+```
+
+You may also create it manually.
+
+Sidenote: Make sure you ignore the `node_modules` directory in your local repo by adding the following to the `.gitignore` file:
+
+```
+/node_modules
+```
+
+You may restore it if you clone your repo by executing
+
+```
+npm install 
+```
+
+## npm scripts
+You may also add more attributes to `package.json`. For example, we may add the `scripts` attribute to manage how to run, build, or deploy the current module.
+
+```json
+ {
+  "name": "playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "node test.js",
+    "dev": "nodemon test.js"
+  }
+}
+```
+
+And to run the `start` or the `dev` scripts, we execute
+
+```
+npm run start
+npm run dev
+
+```
+## Uninstall package
+Try
+
+```
+npm uninstall <package name>
+```
+
+Read More - [https://nodesource.com/blog/the-basics-of-package-json-in-node-js-and-npm/] 
+
+---
+# Event Loop
+
+Event loop is one the most important features of Node.js. It allows a server to handle multiple requests to server resources without blocking the server. Such requests could be accessing the file system, networking, or accessing the database.
