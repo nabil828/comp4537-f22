@@ -562,6 +562,8 @@ app.listen(port, async () => {
 
 ---
 # Deploy your site to Heroku
+Create an account on Heroku, [install the Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), and make sure you have less than five app.
+
 First change the listening port to
 
 ```js
