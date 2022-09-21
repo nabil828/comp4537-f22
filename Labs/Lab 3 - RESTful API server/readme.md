@@ -388,9 +388,9 @@ app.delete('/api/v1/unicorn/:id', (req, res) => {
 ```
 ---
 ## Challenge -  How to read/write the unicorns to a file
-So far, all the updates and deletes are stored in memory in that `unicornsJSON` object. Next, let us try to make our changes persistent to mimic a db.
+So far, all the updates and deletes are stored in memory in that `unicornsJSON` array. Next, let us try to make our changes persistent to mimic a db.
 
-1 - Only store the array in `data.js`:
+1 - Only store the array in `data.json`:
 ```json
 [
   {
@@ -554,7 +554,7 @@ var unicornsJSON = null
 
 app.listen(port, async () => {
   try {
-    unicornsJSON = await readFileAsync('./data.js', 'utf-8')
+    unicornsJSON = await readFileAsync('./data.json', 'utf-8')
     if (!unicornsJSON) {
       console.log("Could not read the file");
       return
@@ -572,7 +572,7 @@ app.listen(port, async () => {
 4 - Update the file in the `POST`, `PATCH` and `DELETE` routes:
 ```js
   //update the file
-  writeFileAsync('./data.js', JSON.stringify(unicornsJSON), 'utf-8')
+  writeFileAsync('./data.json', JSON.stringify(unicornsJSON), 'utf-8')
     .then(() => { })
     .catch((err) => { console.log(err); })
 ```
