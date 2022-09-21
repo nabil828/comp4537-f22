@@ -255,7 +255,7 @@ Let us test these routes using POSTMAN or in my case, Thunder client in VSCode:
 
 2- Create five *requests* 
 ![](https://cdn.discordapp.com/attachments/1017862173881544775/1022030105154945036/unknown.png)
-Here is the names, types, and attributes of these *requests*
+Here are the names, types, and attributes of these *requests*
 ```json
 {
   "collectionName": "Unicorns",
