@@ -4,6 +4,10 @@ Express.js is a Node.js framework that we will use to build the server app. It i
 
 It allows us to use Express.Js  [`middleware`s](http://expressjs.com/en/guide/using-middleware.html) which we are going to use to handle session and other web server vital tasks.
 
+# REST API
+> [[Source]](https://rapidapi.com/blog/most-popular-api/) API stands for Application Programming Interface and allows your application to interact with an external service using a simple set of commands.
+
+out of 10,000 APIs out there in the wild, we will be creating an API to get *unicorns*. [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) stands for Representational state transfer which is an architectural stateless style to make designing web apps more scalable and secure.  
 
 Table of Contents
 =================
