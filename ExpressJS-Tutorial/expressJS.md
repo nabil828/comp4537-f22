@@ -1,3 +1,9 @@
+# Express.JS
+Express.js is a Node.js framework that we will use to build the server app. It is defined as
+  >Fast, unopinionated, minimalist web framework for Node.js
+
+It allows us to use Express.Js  [`middleware`s](http://expressjs.com/en/guide/using-middleware.html) which we are going to use to handle session and other web server vital tasks.
+
 # Express.JS Installing
 
 1 - Create a directory 

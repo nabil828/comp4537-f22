@@ -581,6 +581,10 @@ app.listen(port, async () => {
 
 ---
 # Deploy your site to Heroku
+- Requirements 
+  - [Git installing](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+  - [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
 Create an account on Heroku, [install the Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), and make sure you have less than five app.
 
 Also, you need git cli to be installed on your shell.
