@@ -46,7 +46,7 @@ We will be using a database instead of a reading/writing to a file.
 // app.post('/api/v1/unicorn')          // - create a new unicorn
 // app.get('/api/v1/unicorn/:id')       // - get a unicorn
 // app.patch('/api/v1/unicorn/:id')     // - update a unicorn
-// app.delete('/api/v1/task/:id')       // - delete unicorn
+// app.delete('/api/v1/unicorn/:id')       // - delete unicorn
 ```
 
 ---
