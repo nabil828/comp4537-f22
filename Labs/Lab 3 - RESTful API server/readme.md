@@ -27,11 +27,6 @@
   - JS *objects* and *arrays*
 
 ---
-
-
-
-
----
 ## Next lab: RESTful API Server - Round II
 We will be using a database instead of a reading/writing to a file.
 
