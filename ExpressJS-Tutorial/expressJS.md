@@ -4,6 +4,20 @@ Express.js is a Node.js framework that we will use to build the server app. It i
 
 It allows us to use Express.Js  [`middleware`s](http://expressjs.com/en/guide/using-middleware.html) which we are going to use to handle session and other web server vital tasks.
 
+
+Table of Contents
+=================
+
+* [Express.JS](#expressjs)
+* [Express.JS Installing](#expressjs-installing)
+* [Hello world example](#hello-world-example)
+* [Basic routing](#basic-routing)
+   * [Examples](#examples)
+* [Serving static files in Express](#serving-static-files-in-express)
+* [Route parameters](#route-parameters)
+   * [Response methods](#response-methods)
+* [req.body](#reqbody)
+
 # Express.JS Installing
 
 1 - Create a directory 
