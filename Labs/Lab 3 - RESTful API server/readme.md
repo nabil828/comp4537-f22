@@ -561,5 +561,60 @@ app.listen(port, async () => {
 5- Test again all the *requests*.
 
 ---
+# Deploy your site to Heroku
+First change the listening port to
+
+```js
+app.listen(process.env.PORT || 5000, function (err) {
+    if (err)
+        console.log(err);
+})
+```
+so Heroku can set a port number dynamically.
+
+In the terminal in VSCode, execute the following  
+
+```bash
+git init
+```
+to initialize  a repository.
+
+and
+
+```bash
+git add .
+```
+to add all the files to the repository.
+
+and
+
+
+```shell
+git commit -m "my first commit"
+```
+to commit.
+
+And
+
+```shell
+heroku login
+```
+which is going to prompt you to login using the browser.
+
+Next type,
+```shell
+heroku create
+```
+to create a remote repo on Heroku site.
+
+And
+
+```shell
+git push heroku master
+```
+
+to sync and push local changes to the remote repo hosted on Heroku.com.
+
+---
 # Food for thought 🍎
-- HTTP Patch vs PUT
+- HTTP PATCH vs PUT
