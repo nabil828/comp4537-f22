@@ -550,7 +550,7 @@ const { writeFile, readFile } = require('fs')
 const util = require('util')
 const writeFileAsync = util.promisify(writeFile)
 const readFileAsync = util.promisify(readFile)
-var unicornsJSON = null
+var unicornsJSON = []
 
 app.listen(port, async () => {
   try {
