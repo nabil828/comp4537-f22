@@ -18,7 +18,7 @@ Table of Contents
    * [Response methods](#response-methods)
 * [req.body](#reqbody)
 
-# Express.JS Installing
+# Installing Express.JS 
 
 1 - Create a directory 
 ```
