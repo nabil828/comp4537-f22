@@ -351,6 +351,7 @@ app.get('/api/v1/unicorn/:id', (req, res) => {
 
 - `app.post('/api/v1/unicorn', ..)`
 ```js
+app.use(express.json())
 app.post('/api/v1/unicorn', (req, res) => {
   unicornsJSON.push(req.body)
   //update the file
@@ -360,7 +361,7 @@ app.post('/api/v1/unicorn', (req, res) => {
   res.json(req.body)
 })
 ```
-
+Notice the need of `app.use(express.json())` to access the JSON object in body of the request. `app.use` enable a middleware. We will cover middleware next week. 
 
 - `app.patch('/api/v1/unicorn/:id', ..)`
 
@@ -581,6 +582,8 @@ app.listen(port, async () => {
 ---
 # Deploy your site to Heroku
 Create an account on Heroku, [install the Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), and make sure you have less than five app.
+
+Also, you need git cli to be installed on your shell.
 
 First change the listening port to
 
