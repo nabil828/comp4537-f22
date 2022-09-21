@@ -13,7 +13,9 @@ Table of Contents
 =================
 
 * [Express.JS](#expressjs)
-* [Express.JS Installing](#expressjs-installing)
+* [REST API](#rest-api)
+* [Table of Contents](#table-of-contents)
+* [Installing Express.JS](#installing-expressjs)
 * [Hello world example](#hello-world-example)
 * [Basic routing](#basic-routing)
    * [Examples](#examples)
