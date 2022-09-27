@@ -1,4 +1,19 @@
-`# Review on CRUD and DB
+# Review on CRUD and DB
+
+Table of Contents
+=================
+
+* [CRUD](#crud)
+* [Mongoose](#mongoose)
+   * [Installation and Connecting to MongoDB database](#installation-and-connecting-to-mongodb-database)
+   * [Schema](#schema)
+   * [Creating a Model](#creating-a-model)
+      * [Constructing Documents using Models](#constructing-documents-using-models)
+      * [Querying](#querying)
+      * [Updating](#updating)
+      * [Deleting](#deleting)
+   * [Query Building](#query-building)
+
 
 ---
 # CRUD
@@ -286,8 +301,8 @@ What IF - What if we swapped the limit and sort functions?
 Run and check
 </details>
 
-
-
+---
+# Summary 
 We have barely scratched the surface exploring some of the capabilities of Mongoose. It is a rich library full of useful and and powerful features that make it a joy to work with data models in the application layer.
 
 While you can interact with Mongo directly using Mongo Driver, Mongoose will simplify that interaction by allowing you to model relationships between data and validate them easily.
