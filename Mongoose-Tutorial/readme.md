@@ -3,6 +3,8 @@
 Table of Contents
 =================
 
+* [Review on CRUD and DB](#review-on-crud-and-db)
+* [Table of Contents](#table-of-contents)
 * [CRUD](#crud)
 * [Mongoose](#mongoose)
    * [Installation and Connecting to MongoDB database](#installation-and-connecting-to-mongodb-database)
@@ -13,7 +15,7 @@ Table of Contents
       * [Updating](#updating)
       * [Deleting](#deleting)
    * [Query Building](#query-building)
-
+* [Summary](#summary)
 
 ---
 # CRUD
@@ -107,9 +109,9 @@ An instance of a model is called a document.
 
 <details>
 <summary>
-`unicrons` or may be `unicorn`?
+`unicorns` or may be `unicorn`?
 </summary>
-> The first argument is the singular name of the collection your model is for. Mongoose automatically looks for the plural, lowercased version of your model name. Thus, for the example above, the model Tank is for the tanks collection in the database.
+> The first argument is the singular name of the collection your model is for. Mongoose automatically looks for the plural, lowercased version of your model name. Thus, for the example above, the model `aUnicornModel` is for the unicorns collection in the database.
 
 I think you might run intro troubles if you don't have your collection named in plural in mongodb
 </details>
