@@ -113,7 +113,7 @@ An instance of a model is called a document.
 </summary>
 > The first argument is the singular name of the collection your model is for. Mongoose automatically looks for the plural, lowercased version of your model name. Thus, for the example above, the model `aUnicornModel` is for the unicorns collection in the database.
 
-I think you might run intro troubles if you don't have your collection named in plural in mongodb
+I think you might run intro troubles if you don't have your collection named in plural in mongodb.
 </details>
 
 ---
@@ -197,7 +197,7 @@ unicornModel.updateOne({ name: 'Aurora' }, { weight: '444' }, function(err, res)
 <summary>
 no `$set` operator?
 </summary>
-Is there a difference, when updating a value in mongodb/mongoose between using $set:
+Is there a difference, when updating a value in mongodb/mongoose between using $set?
 
 ```js
 unicornModel.findOneAndUpdate({_id:"xxx"},{$set: {name:"blahblah"} })
