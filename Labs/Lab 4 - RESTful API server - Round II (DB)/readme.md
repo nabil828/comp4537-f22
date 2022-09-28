@@ -263,7 +263,7 @@ You can see that in each of the previous *requests* I have used an `ENV` global 
 
 ---
 ### Work on the Express.JS routes
-- `app.get('/api/v1/unicorns' ..)` 
+- `app.get('/api/v2/unicorns' ..)` 
 ```js
 app.get('/api/v2/unicorns', (req, res) => {
   unicornModel.find({})
@@ -279,7 +279,7 @@ app.get('/api/v2/unicorns', (req, res) => {
 })
 ```
 
-- `app.get('/api/v1/unicorn/:id', ..)`
+- `app.get('/api/v2/unicorn/:id', ..)`
 
 ```js
 app.get('/api/v2/unicorn/:id', (req, res) => {
@@ -305,7 +305,7 @@ app.get('/api/v2/unicorn/:id', (req, res) => {
 })
 ```
 
-- `app.post('/api/v1/unicorn', ..)`
+- `app.post('/api/v2/unicorn', ..)`
 
 ```js
 app.use(express.json())
@@ -327,7 +327,7 @@ app.post('/api/v2/unicorn', (req, res) => {
 ```
 Notice the need of `app.use(express.json())` to access the JSON object in body of the request. `app.use` enable a middleware. We will cover middleware next week. 
 
-- `app.patch('/api/v1/unicorn/:id', ..)`
+- `app.patch('/api/v2/unicorn/:id', ..)`
 
 ```js
 app.patch('/api/v2/unicorn/:id', (req, res) => {
@@ -361,7 +361,7 @@ app.patch('/api/v2/unicorn/:id', (req, res) => {
 })
 ```
 
-- `app.delete('/api/v1/unicorn/:id', ..)`
+- `app.delete('/api/v2/unicorn/:id', ..)`
 
 ```js
 app.delete('/api/v2/unicorn/:id', (req, res) => {
@@ -380,198 +380,6 @@ app.delete('/api/v2/unicorn/:id', (req, res) => {
   res.send("Deleted successfully?")
 })
 ```
----
-## Challenge -  How to read/write the unicorns to a file
-So far, all the updates and deletes are stored in memory in that `unicornsJSON` array. Next, let us try to make our changes persistent to mimic a db.
-
-1 - Only store the array in `data.json`:
-```json
-[
-  {
-    "_id": "6324fbe4998cf52fe226fb96",
-    "name": "Horny",
-    "dob": "1992-03-13T15:47:00.000Z",
-    "loves": [
-      "carrot",
-      "papaya"
-    ],
-    "weight": 600,
-    "gender": "m",
-    "vampires": 63
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb97",
-    "name": "Aurora",
-    "dob": "1991-01-24T21:00:00.000Z",
-    "loves": [
-      "carrot",
-      "grape"
-    ],
-    "weight": 450,
-    "gender": "f",
-    "vampires": 43
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb98",
-    "name": "Unicrom",
-    "dob": "1973-02-10T06:10:00.000Z",
-    "loves": [
-      "energon",
-      "redbull"
-    ],
-    "weight": 984,
-    "gender": "m",
-    "vampires": 182
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb99",
-    "name": "Roooooodles",
-    "dob": "1979-08-19T01:44:00.000Z",
-    "loves": [
-      "apple"
-    ],
-    "weight": 591,
-    "gender": "m",
-    "vampires": 99
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9a",
-    "name": "Solnara",
-    "dob": "1985-07-04T09:01:00.000Z",
-    "loves": [
-      "apple",
-      "carrot",
-      "chocolate"
-    ],
-    "weight": 550,
-    "gender": "f",
-    "vampires": 80
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9b",
-    "name": "Ayna",
-    "dob": "1998-03-07T16:30:00.000Z",
-    "loves": [
-      "strawberry",
-      "lemon"
-    ],
-    "weight": 733,
-    "gender": "f",
-    "vampires": 40
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9c",
-    "name": "Kenny",
-    "dob": "1997-07-01T17:42:00.000Z",
-    "loves": [
-      "grape",
-      "lemon"
-    ],
-    "weight": 690,
-    "gender": "m",
-    "vampires": 39
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9d",
-    "name": "Raleigh",
-    "dob": "2005-05-03T07:57:00.000Z",
-    "loves": [
-      "apple",
-      "sugar"
-    ],
-    "weight": 421,
-    "gender": "m",
-    "vampires": 2
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9e",
-    "name": "Leia",
-    "dob": "2001-10-08T21:53:00.000Z",
-    "loves": [
-      "apple",
-      "watermelon"
-    ],
-    "weight": 601,
-    "gender": "f",
-    "vampires": 33
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9f",
-    "name": "Pilot",
-    "dob": "1997-03-01T13:03:00.000Z",
-    "loves": [
-      "apple",
-      "watermelon"
-    ],
-    "weight": 650,
-    "gender": "m",
-    "vampires": 54
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fba0",
-    "name": "Nimue",
-    "dob": "1999-12-21T00:15:00.000Z",
-    "loves": [
-      "grape",
-      "carrot"
-    ],
-    "weight": 540,
-    "gender": "f"
-  },
-  {
-    "_id": "6324fbe5998cf52fe226fba1",
-    "name": "Dunx",
-    "dob": "1976-07-19T01:18:00.000Z",
-    "loves": [
-      "grape",
-      "watermelon"
-    ],
-    "weight": 704,
-    "gender": "m",
-    "vampires": 165
-  }
-]
-```
-
-2- Comment out the following line
-```js
-// var { unicornsJSON } = require('./data.js')
-```
-
-3- Read the `unicornsJSON` object in the `listen` method:
-```js
-const { writeFile, readFile } = require('fs')
-const util = require('util')
-const writeFileAsync = util.promisify(writeFile)
-const readFileAsync = util.promisify(readFile)
-var unicornsJSON = []
-
-app.listen(port, async () => {
-  try {
-    unicornsJSON = await readFileAsync('./data.json', 'utf-8')
-    if (!unicornsJSON) {
-      console.log("Could not read the file");
-      return
-    }
-    unicornsJSON = JSON.parse(unicornsJSON)
-    console.log(unicornsJSON);
-  } catch (error) {
-    console.log(error);
-  }
-
-  console.log(`Example app listening on port ${port}`)
-})
-```
-
-4 - Update the file in the `POST`, `PATCH` and `DELETE` routes:
-```js
-  //update the file
-  writeFileAsync('./data.json', JSON.stringify(unicornsJSON), 'utf-8')
-    .then(() => { })
-    .catch((err) => { console.log(err); })
-```
-
-5- Test again all the *requests*.
 
 ---
 # Deploy your site to Heroku
@@ -694,6 +502,3 @@ app.patch('/api/v2/unicornRemoveLovesFood/:id/:item', (req, res) => {
 ```
 </details>
 
-
-# Food for thought 🍎
-- HTTP PATCH vs PUT
