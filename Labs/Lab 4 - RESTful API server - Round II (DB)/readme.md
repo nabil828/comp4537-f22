@@ -447,7 +447,7 @@ to sync and push local changes to the remote repo hosted on Heroku.com.
 
 <details>
 <summary>
-**Solution**
+Solution
 </summary>
 
 ```js
