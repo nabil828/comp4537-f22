@@ -140,12 +140,6 @@ db.unicorns.insert({name: 'Horny',
 
 ```
 
-
-
-```js
-var { unicornsJSON } = require('./data.js')
-```
-
 ---
 ### Run the server
 
