@@ -38,6 +38,7 @@ Table of Contents
       * [Add a Schema and a Model](#add-a-schema-and-a-model)
       * [Work on the Express.JS routes](#work-on-the-expressjs-routes)
 * [Deploy your site to Heroku](#deploy-your-site-to-heroku)
+* [Host DB on MongoDB Atlas](#host-db-on-mongodb-atlas)
 * [Challenges](#challenges)
 
 
