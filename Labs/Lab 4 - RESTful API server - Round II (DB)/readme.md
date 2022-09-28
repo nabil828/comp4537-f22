@@ -155,13 +155,19 @@ var { unicornsJSON } = require('./data.js')
 
 ```js
 const express = require('express')
+const mongoose = require('mongoose')
 
 const app = express()
 const port = 5000
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(port, async () => {
+  try {
+    await mongoose.connect('mongodb://localhost:27017/test')
+  } catch (error) {
+    console.log('db error');
   }
+  console.log(`Example app listening on port ${port}`)
+}
 )
 ```
 Make sure the server is running:
@@ -256,6 +262,26 @@ You can see that in each of the previous *requests* I have used an `ENV` global 
 ![](https://cdn.discordapp.com/attachments/1017862173881544775/1022034650421530665/unknown.png)
 
 ---
+### Add a Schema and a Model 
+
+```js
+
+const { Schema } = mongoose;
+
+const unicornSchema = new Schema({
+  "name": String, // String is shorthand for {type: String}
+  "weight": Number,
+  "loves": [String],
+  "gender": {
+    enum: ["f", "m"]
+  },
+  "vampires": Number,
+  "dob": Date
+});
+
+const unicornModel = mongoose.model('unicorns', unicornSchema); // unicorns is the name of the collection in db
+
+``` 
 ### Work on the Express.JS routes
 - `app.get('/api/v2/unicorns' ..)` 
 ```js
