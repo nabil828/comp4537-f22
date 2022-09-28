@@ -1,4 +1,23 @@
-# Lab 3 - RESTful API Server - Round I (DB)
+# Lab 4 - RESTful API Server - Round II (DB)
+
+Table of Contents
+=================
+
+* [Lab 3 - RESTful API Server - Round I (DB)](#lab-3---restful-api-server---round-i-db)
+   * [Goals:](#goals)
+   * [Keywords:](#keywords)
+* [Table of Contents](#table-of-contents)
+   * [Next lab: RESTful API Server - Round III](#next-lab-restful-api-server---round-iii)
+   * [Steps](#steps)
+      * [Create a Package](#create-a-package)
+      * [Create the unicorns DB](#create-the-unicorns-db)
+      * [Run the server](#run-the-server)
+      * [Test the server using Thunder Client Extension](#test-the-server-using-thunder-client-extension)
+      * [Work on the Express.JS routes](#work-on-the-expressjs-routes)
+* [Deploy your site to Heroku](#deploy-your-site-to-heroku)
+* [Challenges](#challenges)
+
+
 ## Goals: 
 - To build a RESTful API server connected to MongoDb database.
 - Test using POSTMAN/Thunder Client
