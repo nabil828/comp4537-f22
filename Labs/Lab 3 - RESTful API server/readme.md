@@ -1,4 +1,4 @@
-# Lab 3 - RESTful API Server - Round I
+# Lab 3 - RESTful API Server - Round I (Files)
 ## Goals: 
 - To build a basic RESTful API server.
 - Test using POSTMAN/Thunder Client
@@ -33,7 +33,7 @@ Table of Contents
 * [Lab 3 - RESTful API Server - Round I](#lab-3---restful-api-server---round-i)
    * [Goals:](#goals)
    * [Keywords:](#keywords)
-   * [Next lab: RESTful API Server - Round II](#next-lab-restful-api-server---round-ii)
+   * [Next lab: RESTful API Server - Round II (DB)](#next-lab-restful-api-server---round-ii)
    * [Steps](#steps)
       * [Create a Package](#create-a-package)
       * [Add the data as JS object](#add-the-data-as-js-object)
