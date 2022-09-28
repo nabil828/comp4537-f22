@@ -1,5 +1,31 @@
 # Lab 4 - RESTful API Server - Round II (DB)
 
+
+
+## Goals
+- To build a RESTful API server connected to MongoDb database.
+- Test using POSTMAN/Thunder Client
+- To deploy server on Heroku  
+- To test mongoose queries
+
+## Keywords
+- Mongoose
+  - Connection, Schema, Model, Query
+
+- Express.JS
+  - `app.get()` 
+    - `req.params` object
+  - `app.post()` 
+    - `req.body`
+  - `app.put()` 
+  - `app.patch()` 
+  - `app.delete()` 
+  - `app.use(express.json())` method to add a middleware
+  - `app.listen()`
+
+
+
+
 Table of Contents
 =================
 
@@ -16,42 +42,6 @@ Table of Contents
       * [Work on the Express.JS routes](#work-on-the-expressjs-routes)
 * [Deploy your site to Heroku](#deploy-your-site-to-heroku)
 * [Challenges](#challenges)
-
-
-
-## Goals
-- To build a RESTful API server connected to MongoDb database.
-- Test using POSTMAN/Thunder Client
-- To deploy server on Heroku  
-- To test mongoose queries
-
-## Keywords
-<del>- Node.JS</del>
-<del>  - `fs` module</del>
-<del>    - `writeFile()`</del>
-<del>    - `readFile()`</del>
-<del>  - Async Programming </del>
-<del>    - Promises   </del>
-<del>    - Async/Await</del>
-<del>    - `util.promisify()`</del>
-
-- Mongoose
-  - ??
-
-- Express.JS
-  - `app.get()` 
-    - `req.params` object
-  - `app.post()` 
-    - `req.body`
-  - `app.put()` 
-  - `app.patch()` 
-  - `app.delete()` 
-  - `app.use(express.json())` method to add a middleware
-  - `app.listen()`
-
-<del>- JS</del>
-<del>  - `map()` and `filter()` functions</del>
-<del>  - JS *objects* and *arrays*</del>
 
 
 
@@ -457,7 +447,7 @@ to sync and push local changes to the remote repo hosted on Heroku.com.
 
 <details>
 <summary>
-Solution
+**Solution**
 </summary>
 
 ```js
