@@ -1,17 +1,23 @@
-# Lab 3 - RESTful API Server - Round I (Files)
+# Lab 3 - RESTful API Server - Round I (DB)
 ## Goals: 
-- To build a basic RESTful API server.
+- To build a RESTful API server connected to MongoDb database.
 - Test using POSTMAN/Thunder Client
-- To Deploy server on Heroku  
+- To deploy server on Heroku  
+- To test mongoose queries
+
 ## Keywords:
-- Node.JS
-  - `fs` module
-    - `writeFile()`
-    - `readFile()`
-  - Async Programming 
-    - Promises   
-    - Async/Await
-    - `util.promisify()`
+<del>- Node.JS</del>
+<del>  - `fs` module</del>
+<del>    - `writeFile()`</del>
+<del>    - `readFile()`</del>
+<del>  - Async Programming </del>
+<del>    - Promises   </del>
+<del>    - Async/Await</del>
+<del>    - `util.promisify()`</del>
+
+- Mongoose
+  - ??
+
 - Express.JS
   - `app.get()` 
     - `req.params` object
@@ -21,10 +27,11 @@
   - `app.patch()` 
   - `app.delete()` 
   - `app.use(express.json())` method to add a middleware
-  - `app.listen()` 
-- JS
-  - `map()` and `filter()` functions
-  - JS *objects* and *arrays*
+  - `app.listen()`
+
+<del>- JS</del>
+<del>  - `map()` and `filter()` functions</del>
+<del>  - JS *objects* and *arrays*</del>
 
 
 Table of Contents
@@ -45,8 +52,8 @@ Table of Contents
 * [Food for thought <g-emoji class="g-emoji" alias="apple" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f34e.png">🍎</g-emoji>](#food-for-thought-)
 
 ---
-## Next lab: RESTful API Server - Round II
-We will be using a database instead of a reading/writing to a file.
+## Next lab: RESTful API Server - Round III
+Next week, we will add sessions to the server.
 
 ---
 ## Steps
@@ -55,165 +62,95 @@ We will be using a database instead of a reading/writing to a file.
 - Add the following routes stubs to your file:
 
 ```js
-// app.get('/api/v1/unicorns')           // - get all the unicorns
-// app.post('/api/v1/unicorn')          // - create a new unicorn
-// app.get('/api/v1/unicorn/:id')       // - get a unicorn
-// app.patch('/api/v1/unicorn/:id')     // - update a unicorn
-// app.delete('/api/v1/unicorn/:id')       // - delete unicorn
+// app.get('/api/v2/unicorns')           // - get all the unicorns
+// app.post('/api/v2/unicorn')          // - create a new unicorn
+// app.get('/api/v2/unicorn/:id')       // - get a unicorn
+// app.patch('/api/v2/unicorn/:id')     // - update a unicorn
+// app.delete('/api/v2/unicorn/:id')       // - delete unicorn
 ```
 
 ---
-### Add the data as JS object 
-- create a new file *data.js* with the following content:
+### Create the `unicorns` DB 
+- create a new mongodb * with the following `insert` mongodb functions:
 
 ```js
-exports.unicornsJSON  = [
-  {
-    "_id": "6324fbe4998cf52fe226fb96",
-    "name": "Horny",
-    "dob": "1992-03-13T15:47:00.000Z",
-    "loves": [
-      "carrot",
-      "papaya"
-    ],
-    "weight": 600,
-    "gender": "m",
-    "vampires": 63
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb97",
-    "name": "Aurora",
-    "dob": "1991-01-24T21:00:00.000Z",
-    "loves": [
-      "carrot",
-      "grape"
-    ],
-    "weight": 450,
-    "gender": "f",
-    "vampires": 43
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb98",
-    "name": "Unicrom",
-    "dob": "1973-02-10T06:10:00.000Z",
-    "loves": [
-      "energon",
-      "redbull"
-    ],
-    "weight": 984,
-    "gender": "m",
-    "vampires": 182
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb99",
-    "name": "Roooooodles",
-    "dob": "1979-08-19T01:44:00.000Z",
-    "loves": [
-      "apple"
-    ],
-    "weight": 591,
-    "gender": "m",
-    "vampires": 99
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9a",
-    "name": "Solnara",
-    "dob": "1985-07-04T09:01:00.000Z",
-    "loves": [
-      "apple",
-      "carrot",
-      "chocolate"
-    ],
-    "weight": 550,
-    "gender": "f",
-    "vampires": 80
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9b",
-    "name": "Ayna",
-    "dob": "1998-03-07T16:30:00.000Z",
-    "loves": [
-      "strawberry",
-      "lemon"
-    ],
-    "weight": 733,
-    "gender": "f",
-    "vampires": 40
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9c",
-    "name": "Kenny",
-    "dob": "1997-07-01T17:42:00.000Z",
-    "loves": [
-      "grape",
-      "lemon"
-    ],
-    "weight": 690,
-    "gender": "m",
-    "vampires": 39
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9d",
-    "name": "Raleigh",
-    "dob": "2005-05-03T07:57:00.000Z",
-    "loves": [
-      "apple",
-      "sugar"
-    ],
-    "weight": 421,
-    "gender": "m",
-    "vampires": 2
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9e",
-    "name": "Leia",
-    "dob": "2001-10-08T21:53:00.000Z",
-    "loves": [
-      "apple",
-      "watermelon"
-    ],
-    "weight": 601,
-    "gender": "f",
-    "vampires": 33
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fb9f",
-    "name": "Pilot",
-    "dob": "1997-03-01T13:03:00.000Z",
-    "loves": [
-      "apple",
-      "watermelon"
-    ],
-    "weight": 650,
-    "gender": "m",
-    "vampires": 54
-  },
-  {
-    "_id": "6324fbe4998cf52fe226fba0",
-    "name": "Nimue",
-    "dob": "1999-12-21T00:15:00.000Z",
-    "loves": [
-      "grape",
-      "carrot"
-    ],
-    "weight": 540,
-    "gender": "f"
-  },
-  {
-    "_id": "6324fbe5998cf52fe226fba1",
-    "name": "Dunx",
-    "dob": "1976-07-19T01:18:00.000Z",
-    "loves": [
-      "grape",
-      "watermelon"
-    ],
-    "weight": 704,
-    "gender": "m",
-    "vampires": 165
-  }
-]
+db.unicorns.insert({name: 'Horny',
+		dob: new Date(1992,2,13,7,47),
+		loves: ['carrot','papaya'],
+		weight: 600,
+		gender: 'm',
+		vampires: 63});
+	db.unicorns.insert({name: 'Aurora',
+		dob: new Date(1991, 0, 24, 13, 0),
+		loves: ['carrot', 'grape'],
+		weight: 450,
+		gender: 'f',
+		vampires: 43});
+	db.unicorns.insert({name: 'Unicrom',
+		dob: new Date(1973, 1, 9, 22, 10),
+		loves: ['energon', 'redbull'],
+		weight: 984,
+		gender: 'm',
+		vampires: 182});
+	db.unicorns.insert({name: 'Roooooodles',
+		dob: new Date(1979, 7, 18, 18, 44),
+		loves: ['apple'],
+		weight: 575,
+		gender: 'm',
+		vampires: 99});
+	db.unicorns.insert({name: 'Solnara',
+		dob: new Date(1985, 6, 4, 2, 1),
+		loves:['apple', 'carrot',
+			'chocolate'],
+		weight:550,
+		gender:'f',
+		vampires:80});
+	db.unicorns.insert({name:'Ayna',
+		dob: new Date(1998, 2, 7, 8, 30),
+		loves: ['strawberry', 'lemon'],
+		weight: 733,
+		gender: 'f',
+		vampires: 40});
+	db.unicorns.insert({name:'Kenny',
+		dob: new Date(1997, 6, 1, 10, 42),
+		loves: ['grape', 'lemon'],
+		weight: 690,
+		gender: 'm',
+		vampires: 39});
+	db.unicorns.insert({name: 'Raleigh',
+		dob: new Date(2005, 4, 3, 0, 57),
+		loves: ['apple', 'sugar'],
+		weight: 421,
+		gender: 'm',
+		vampires: 2});
+	db.unicorns.insert({name: 'Leia',
+		dob: new Date(2001, 9, 8, 14, 53),
+		loves: ['apple', 'watermelon'],
+		weight: 601,
+		gender: 'f',
+		vampires: 33});
+	db.unicorns.insert({name: 'Pilot',
+		dob: new Date(1997, 2, 1, 5, 3),
+		loves: ['apple', 'watermelon'],
+		weight: 650,
+		gender: 'm',
+		vampires: 54});
+	db.unicorns.insert({name: 'Nimue',
+		dob: new Date(1999, 11, 20, 16, 15),
+		loves: ['grape', 'carrot'],
+		weight: 540,
+		gender: 'f'});
+	db.unicorns.insert({name: 'Dunx',
+		dob: new Date(1976, 6, 18, 18, 18),
+		loves: ['grape', 'watermelon'],
+		weight: 704,
+		gender: 'm',
+		vampires: 165});
+
+
 ```
-and import it to *server.js* using 
+
+
 
 ```js
 var { unicornsJSON } = require('./data.js')
@@ -234,27 +171,27 @@ app.listen(port, () => {
 )
 ```
 Make sure the server is running:
-![](https://cdn.discordapp.com/attachments/1017862173881544775/1022028353307426866/unknown.png)
+![](https://cdn.discordapp.com/attachments/1017862173881544775/1024697061024739338/unknown.png)
 
 - Next, implement the above routes a dummy response for now:
 ```js
-app.get('/api/v1/unicorns', (req, res) => {
+app.get('/api/v2/unicorns', (req, res) => {
   res.send('All the unicorns')
 })
 
-app.post('/api/v1/unicorn', (req, res) => {
+app.post('/api/v2/unicorn', (req, res) => {
   res.send('Create a new unicorn')
 })
 
-app.get('/api/v1/unicorn/:id', (req, res) => {
+app.get('/api/v2/unicorn/:id', (req, res) => {
   res.send('Get a unicorn')
 })
 
-app.patch('/api/v1/unicorn/:id', (req, res) => {
+app.patch('/api/v2/unicorn/:id', (req, res) => {
   res.send('Update a unicorn')
 })
 
-app.delete('/api/v1/unicorn/:id', (req, res) => {
+app.delete('/api/v2/unicorn/:id', (req, res) => {
   res.send('Delete a unicorn')
 })
 
@@ -313,7 +250,7 @@ Here are the names, types, and attributes of these *requests*
 
 3- Add an `ENV` global variable to match the common prefix of each route - `http://localhost:5000/api/v1/`
 ![](https://cdn.discordapp.com/attachments/1017862173881544775/1022032688787501086/unknown.png)
-![](https://cdn.discordapp.com/attachments/1017862173881544775/1022032813479968789/unknown.png)
+![v2](https://cdn.discordapp.com/attachments/1017862173881544775/1024696620241125396/unknown.png)
 You can see that in each of the previous *requests* I have used an `ENV` global variable name `URL`: 
 ![](https://cdn.discordapp.com/attachments/1017862173881544775/1022033501983354880/unknown.png)
 ![](https://cdn.discordapp.com/attachments/1017862173881544775/1022033531330891846/unknown.png)
@@ -328,60 +265,117 @@ You can see that in each of the previous *requests* I have used an `ENV` global 
 ### Work on the Express.JS routes
 - `app.get('/api/v1/unicorns' ..)` 
 ```js
-app.get('/api/v1/unicorns', (req, res) => {
-  res.json(unicornsJSON)
+app.get('/api/v2/unicorns', (req, res) => {
+  unicornModel.find({})
+    .then(docs => {
+      console.log(docs)
+      res.json(docs)
+    })
+    .catch(err => {
+      console.error(err)
+      res.json({ msg: "db reading .. err.  Check with server devs" })
+    })
+  // res.json(unicornsJSON)
 })
 ```
 
 - `app.get('/api/v1/unicorn/:id', ..)`
-```js
-app.get('/api/v1/unicorn/:id', (req, res) => {
-  var found = false
-  for (i = 0; i < unicornsJSON.length; i++) {
-    if (unicornsJSON[i]._id == req.params.id) {
-      found = true
-      break
-    }
-  }
 
-  if (found) { res.json(unicornsJSON[i]); return }
-  res.json({ msg: "not found" })
+```js
+app.get('/api/v2/unicorn/:id', (req, res) => {
+  // var found = false
+  // for (i = 0; i < unicornsJSON.length; i++) {
+  //   if (unicornsJSON[i]._id == req.params.id) {
+  //     found = true
+  //     break
+  //   }
+  // }
+  // if (found) { res.json(unicornsJSON[i]); return }
+  // res.json({ msg: "not found" })
+  console.log(req.params.id);
+  unicornModel.find({ _id: mongoose.Types.ObjectId(`${req.params.id}`) })
+    .then(doc => {
+      console.log(doc)
+      res.json(doc)
+    })
+    .catch(err => {
+      console.error(err)
+      res.json({ msg: "db reading .. err.  Check with server devs" })
+    })
 })
 ```
 
 - `app.post('/api/v1/unicorn', ..)`
+
 ```js
 app.use(express.json())
-app.post('/api/v1/unicorn', (req, res) => {
-  unicornsJSON.push(req.body)
+app.post('/api/v2/unicorn', (req, res) => {
+  // - create a new unicorn
+
+  // unicornsJSON.push(req.body)
   //update the file
-  writeFileAsync('./data.js', JSON.stringify(unicornsJSON), 'utf-8')
-    .then(() => { })
-    .catch((err) => { console.log(err); })
+  // writeFileAsync('./data.js', JSON.stringify(unicornsJSON), 'utf-8')
+  //   .then(() => { })
+  //   .catch((err) => { console.log(err); })
+
+  unicornModel.create(req.body, function (err) {
+    if (err) console.log(err);
+    // saved!
+  });
   res.json(req.body)
-})
+})  
 ```
 Notice the need of `app.use(express.json())` to access the JSON object in body of the request. `app.use` enable a middleware. We will cover middleware next week. 
 
 - `app.patch('/api/v1/unicorn/:id', ..)`
 
 ```js
-app.patch('/api/v1/unicorn/:id', (req, res) => {
-  unicornsJSON = unicornsJSON.map(({ _id, ...aUnicorn }) => {
-    if (_id == req.body._id) {
-      console.log("Bingo!");
-      return req.body
-    } else
-      return aUnicorn
-  })
+app.patch('/api/v2/unicorn/:id', (req, res) => {
+  // - update a unicorn
+
+  // unicornsJSON = unicornsJSON.map(({ _id, ...aUnicorn }) => {
+  //   // console.log(req.body);
+  //   if (_id == req.body._id) {
+  //     console.log("Bingo!");
+  //     return req.body
+  //   } else
+  //     return aUnicorn
+  // })
+  // console.log(unicornsJSON);
+
+
+  //update the file
+  // writeFileAsync('./data.js', JSON.stringify(unicornsJSON), 'utf-8')
+  //   .then(() => { })
+  //   .catch((err) => { console.log(err); })
+  // console.log(req.body);
+  const { _id, ...rest } = req.body;
+  unicornModel.updateOne({ _id: mongoose.Types.ObjectId(req.body._id) }, rest, function (err, res) {
+    // Updated at most one doc, `res.nModified` contains the number
+    // of docs that MongoDB updated
+    if (err) console.log(err)
+    console.log(res)
+  });
+
   res.send("Updated successfully!")
 })
 ```
 
 - `app.delete('/api/v1/unicorn/:id', ..)`
+
 ```js
-app.delete('/api/v1/unicorn/:id', (req, res) => {
-  unicornsJSON = unicornsJSON.filter((element) => element._id != req.params.id)
+app.delete('/api/v2/unicorn/:id', (req, res) => {
+  // - delete a unicorn
+  // unicornsJSON = unicornsJSON.filter((element) => element._id != req.params.id)
+
+  // //update the file
+  // writeFileAsync('./data.js', JSON.stringify(unicornsJSON), 'utf-8')
+  //   .then(() => { })
+  //   .catch((err) => { console.log(err); })
+  unicornModel.deleteOne({ _id: mongoose.Types.ObjectId(req.params.id) }, function (err, result) {
+    if (err) console.log(err);
+    console.log(result);
+  });
 
   res.send("Deleted successfully?")
 })
@@ -643,5 +637,63 @@ git push heroku master
 to sync and push local changes to the remote repo hosted on Heroku.com.
 
 ---
+# Challenges
+ Can you add the followings routes to your server to set, add an item, or remove an item to/from the *loves* array for a unicorn:
+- `app.patch('/api/v1/unicornNewLovesFood/:id/', ()=>{})` and pass the new array food using a JSON object in the body of PATCH HTTP request?
+- `app.patch('/api/v1/unicornAddLovesFood/:id/:item', ()=>{})` and pass the food item as a URL parameter of the PATCH HTTP request?
+- `app.patch('/api/v1/unicornRemoveLovesFood/:id/:item', ()=>{})` and pass the array food item to be removed as a URL parameter of the PATCH HTTP request?
+
+<details>
+<summary>
+Solution
+</summary>
+
+```js
+
+
+app.patch('/api/v2/unicornNewLovesFood/:id/', (req, res) => {
+  unicornModel.updateOne({ _id: mongoose.Types.ObjectId(req.params.id) }, req.body, function (err, res) {
+    // Updated at most one doc, `res.nModified` contains the number
+    // of docs that MongoDB updated
+    if (err) console.log(err)
+    console.log(res)
+  });
+
+  res.send("Updated successfully!")
+})
+
+app.patch('/api/v2/unicornAddLovesFood/:id/', (req, res) => {
+  unicornModel.updateOne({ _id: mongoose.Types.ObjectId(req.params.id) }, {
+    $push: {
+      loves: req.body.newLoves
+    }
+  }, function (err, res) {
+    // Updated at most one doc, `res.nModified` contains the number
+    // of docs that MongoDB updated
+    if (err) console.log(err)
+    console.log(res)
+  });
+  res.send("Updated successfully!")
+})
+
+app.patch('/api/v2/unicornRemoveLovesFood/:id/:item', (req, res) => {
+  unicornModel.updateOne({ _id: mongoose.Types.ObjectId(req.params.id) }, {
+    $pull: {
+      loves: req.params.item
+    }
+  }, function (err, res) {
+    // Updated at most one doc, `res.nModified` contains the number
+    // of docs that MongoDB updated
+    if (err) console.log(err)
+    console.log(res)
+  });
+  res.send("Updated successfully!")
+})
+
+
+```
+</details>
+
+
 # Food for thought 🍎
 - HTTP PATCH vs PUT

@@ -177,7 +177,7 @@ unicornModel.find({ name: 'Aurora' })
     console.error(err)
   })
 ```
-See the chapter on [queries](https://mongoosejs.com/docs/queries.html) for more details on how to use the [Query](https://mongoosejs.com/docs/queries.html) api.
+See the chapter on [queries](https://mongoosejs.com/docs/queries.html) for more details on how to use the [Query](https://mongoosejs.com/docs/api/query.html) api.
 
 
 ---
@@ -244,7 +244,7 @@ So there is no difference unless you specify `overwrite: true `in options.
 ```js
 unicornModel.deleteOne({ name: 'test3' }, function (err) {
   if (err) return handleError(err);
-  // deleted at most one tank document
+  // deleted at most one unicorn document
 });
 
 // or
