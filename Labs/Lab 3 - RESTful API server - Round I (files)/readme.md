@@ -30,10 +30,11 @@
 Table of Contents
 =================
 
-* [Lab 3 - RESTful API Server - Round I](#lab-3---restful-api-server---round-i)
+* [Lab 3 - RESTful API Server - Round I (Files)](#lab-3---restful-api-server---round-i-files)
    * [Goals:](#goals)
    * [Keywords:](#keywords)
-   * [Next lab: RESTful API Server - Round II (DB)](#next-lab-restful-api-server---round-ii)
+* [Table of Contents](#table-of-contents)
+   * [Next lab: RESTful API Server - Round II](#next-lab-restful-api-server---round-ii)
    * [Steps](#steps)
       * [Create a Package](#create-a-package)
       * [Add the data as JS object](#add-the-data-as-js-object)
@@ -42,8 +43,10 @@ Table of Contents
       * [Work on the Express.JS routes](#work-on-the-expressjs-routes)
    * [Challenge -  How to read/write the unicorns to a file](#challenge----how-to-readwrite-the-unicorns-to-a-file)
 * [Deploy your site to Heroku](#deploy-your-site-to-heroku)
+* [Challenges](#challenges)
 * [Food for thought <g-emoji class="g-emoji" alias="apple" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f34e.png">🍎</g-emoji>](#food-for-thought-)
 
+ 
 ---
 ## Next lab: RESTful API Server - Round II
 We will be using a database instead of a reading/writing to a file.
