@@ -7,7 +7,7 @@ const port = 5000
 app.listen(port, async () => {
   try {
     // await mongoose.connect('mongodb://localhost:27017/test')
-    await mongoose.connect('mongodb+srv://user1:629Iv5E4zQcfyTLR@cluster0.lbm8g.mongodb.net/?retryWrites=true&w=majority')
+    await mongoose.connect('mongodb+srv://user1:629Iv5E4zQcfyTLR@cluster0.lbm8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     //  
   } catch (error) {
     console.log(error);
