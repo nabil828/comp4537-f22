@@ -360,7 +360,7 @@ app.patch('/api/v2/unicorn/:id', (req, res) => {
   //   .catch((err) => { console.log(err); })
   // console.log(req.body);
   const { _id, ...rest } = req.body;
-  unicornModel.updateOne({ _id: mongoose.Types.ObjectId(req.body._id) }, rest, function (err, res) {
+  unicornModel.updateOne({ _id: mongoose.Types.ObjectId(req.params.id) }, rest, function (err, res) {
     // Updated at most one doc, `res.nModified` contains the number
     // of docs that MongoDB updated
     if (err) console.log(err)
