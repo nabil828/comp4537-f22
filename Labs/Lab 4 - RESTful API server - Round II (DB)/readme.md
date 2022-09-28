@@ -19,13 +19,13 @@ Table of Contents
 * [Challenges](#challenges)
 
 
-## Goals: 
+## Goals
 - To build a RESTful API server connected to MongoDb database.
 - Test using POSTMAN/Thunder Client
 - To deploy server on Heroku  
 - To test mongoose queries
 
-## Keywords:
+## Keywords
 <del>- Node.JS</del>
 <del>  - `fs` module</del>
 <del>    - `writeFile()`</del>
