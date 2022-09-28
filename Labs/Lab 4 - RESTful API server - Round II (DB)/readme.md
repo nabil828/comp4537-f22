@@ -5,9 +5,8 @@ Table of Contents
 
 * [Lab 4 - RESTful API Server - Round II (DB)](#lab-4---restful-api-server---round-ii-db)
 * [Table of Contents](#table-of-contents)
-   * [Goals:](#goals)
-   * [Keywords:](#keywords)
-* [Table of Contents](#table-of-contents-1)
+   * [Goals](#goals)
+   * [Keywords](#keywords)
    * [Next lab: RESTful API Server - Round III](#next-lab-restful-api-server---round-iii)
    * [Steps](#steps)
       * [Create a Package](#create-a-package)
@@ -17,6 +16,7 @@ Table of Contents
       * [Work on the Express.JS routes](#work-on-the-expressjs-routes)
 * [Deploy your site to Heroku](#deploy-your-site-to-heroku)
 * [Challenges](#challenges)
+
 
 
 ## Goals
