@@ -495,7 +495,7 @@ app.patch('/api/v2/unicornRemoveLovesFood/:id/:item', (req, res) => {
 ```
 </details>
 
-details>
+<details>
 <summary>
 Requests
 </summary>
