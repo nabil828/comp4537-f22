@@ -190,6 +190,11 @@ app.delete('/api/v2/unicorn/:id', (req, res) => {
 
 ---
 ### Test the server using Thunder Client Extension
+<details>
+<summary>
+Collapsed. Same as last lab. 
+</summary>
+
 Let us test these routes using POSTMAN or in my case, Thunder client in VSCode:
 1 - Create a *Collection* of requests
 ![](https://cdn.discordapp.com/attachments/1017862173881544775/1022029867899944980/unknown.png)
@@ -251,6 +256,7 @@ You can see that in each of the previous *requests* I have used an `ENV` global 
 
 4- Run all the *requests* in the collection and make sure all of them are returning 200 successful responses.
 ![](https://cdn.discordapp.com/attachments/1017862173881544775/1022034650421530665/unknown.png)
+</details>
 
 ---
 ### Add a Schema and a Model 
