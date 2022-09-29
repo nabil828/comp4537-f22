@@ -495,3 +495,73 @@ app.patch('/api/v2/unicornRemoveLovesFood/:id/:item', (req, res) => {
 ```
 </details>
 
+details>
+<summary>
+Requests
+</summary>
+
+```js
+{
+  "client": "Thunder Client",
+  "collectionName": "unicornLovesFood",
+  "dateExported": "2022-09-29T00:08:14.791Z",
+  "version": "1.1",
+  "folders": [],
+  "requests": [
+    {
+      "_id": "3aa06fc1-9f40-45ce-9e0a-b4685230357a",
+      "colId": "d030e77e-9524-48b8-b17e-222617e7f681",
+      "containerId": "",
+      "name": "unicornNewLovesFood",
+      "url": "{{URL}}unicornNewLovesFood/6324fbe4998cf52fe226fb97",
+      "method": "PATCH",
+      "sortNum": 10000,
+      "created": "2022-09-28T15:15:21.804Z",
+      "modified": "2022-09-28T15:52:01.781Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": " {\n    \"loves\": [\n      \"orange\",\n      \"apple\"\n    ]\n  }",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "45c383a0-211d-4ac5-b214-916bfa647a35",
+      "colId": "d030e77e-9524-48b8-b17e-222617e7f681",
+      "containerId": "",
+      "name": "unicornAddLovesFood",
+      "url": "{{URL}}unicornAddLovesFood/6324fbe4998cf52fe226fb97",
+      "method": "PATCH",
+      "sortNum": 20000,
+      "created": "2022-09-28T15:18:29.449Z",
+      "modified": "2022-09-28T16:00:42.270Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": " {\n    \"newLoves\": [\n      \"carrot\",\n      \"tomato\"\n    ]\n  }",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "3d64884e-8175-49ea-8609-2ff947fba3a8",
+      "colId": "d030e77e-9524-48b8-b17e-222617e7f681",
+      "containerId": "",
+      "name": "unicornRemoveLovesFood",
+      "url": "{{URL}}unicornRemoveLovesFood/6324fbe4998cf52fe226fb97/carrot",
+      "method": "PATCH",
+      "sortNum": 30000,
+      "created": "2022-09-28T15:27:59.687Z",
+      "modified": "2022-09-28T16:12:52.816Z",
+      "headers": [],
+      "params": [],
+      "tests": []
+    }
+  ]
+}
+```
+</details>
+

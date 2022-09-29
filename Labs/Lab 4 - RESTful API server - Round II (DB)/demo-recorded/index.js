@@ -6,8 +6,8 @@ const port = 5000
 
 app.listen(port, async () => {
   try {
-    // await mongoose.connect('mongodb://localhost:27017/test')
-    await mongoose.connect('mongodb+srv://user1:629Iv5E4zQcfyTLR@cluster0.lbm8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
+    await mongoose.connect('mongodb://localhost:27017/test')
+    // await mongoose.connect('mongodb+srv://user1:629Iv5E4zQcfyTLR@cluster0.lbm8g.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
     //  
   } catch (error) {
     console.log(error);
@@ -56,10 +56,10 @@ app.get('/api/v2/unicorn/:id', (req, res) => {
   // }
   // if (found) { res.json(unicornsJSON[i]); return }
   // res.json({ msg: "not found" })
-  console.log(req.params.id);
+  // console.log(req.params.id);
   unicornModel.find({ _id: mongoose.Types.ObjectId(`${req.params.id}`) })
     .then(doc => {
-      console.log(doc)
+      // console.log(doc)
       res.json(doc)
     })
     .catch(err => {
@@ -108,7 +108,7 @@ app.patch('/api/v2/unicorn/:id', (req, res) => {
   //   .catch((err) => { console.log(err); })
   // console.log(req.body);
   const { _id, ...rest } = req.body;
-  unicornModel.updateOne({ _id: mongoose.Types.ObjectId(req.params.id) }, rest, function (err, res) {
+  unicornModel.updateOne({ _id: mongoose.Types.ObjectId(req.params.id) }, { $set: { ...rest } }, { runValidators: true }, function (err, res) {
     // Updated at most one doc, `res.nModified` contains the number
     // of docs that MongoDB updated
     if (err) console.log(err)
