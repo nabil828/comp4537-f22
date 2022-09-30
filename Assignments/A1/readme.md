@@ -66,7 +66,7 @@ As listed above. Just care for the query parameters: `count` and `after`. Inspir
 ```
 <Your heroku domain name>/api/doc
 ```
-Aee your server routes, schema rules, responses, and any other specs for the users to follow. 
+Document your server routes, schema rules, responses, and any other specs for the users to follow. 
 
 ## Responses
 - You should always respond in JSON
