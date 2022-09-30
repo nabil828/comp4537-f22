@@ -14,7 +14,7 @@ You have to provide the following routes
 
 # Requirements 
 ## DB - how to create?
-- Your server has to fetch the data from [this GitHub repo](https://github.com/fanzeyi/pokemon.json).
+- Your server has to fetch the data from [this GitHub repo](https://github.com/fanzeyi/pokemon.json) dynamically.
   - We will use the [Pokémon file](https://github.com/fanzeyi/pokemon.json/blob/master/pokedex.json) to fetch the Pokeomns docs and create the  Pokémon collection
   - We will use the [types file](https://github.com/fanzeyi/pokemon.json/blob/master/types.json) to fetch the Pokémons types
 - Create a database on MongoDB Atlas that has all Pokémons documents.
