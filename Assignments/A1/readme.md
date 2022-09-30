@@ -78,7 +78,7 @@ Aee your server routes, schema rules, responses, and any other specs for the use
 
 
 # Deliverables
-*To be added but for now links to github, heroku, tests (Thunder Client requests), self-graded rubric, and short 2-4 minutes offline YT video demo*
+*To be added but for now links to github, heroku, tests (Thunder Client requests) dump, self-graded rubric, and short 2-4 minutes offline YT video demo*
 
 # Rubric
 *To be added*
