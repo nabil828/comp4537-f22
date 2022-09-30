@@ -17,6 +17,8 @@ You have to provide the following routes
 - Your server has to fetch the data from [this GitHub repo](https://github.com/fanzeyi/pokemon.json) dynamically.
   - We will use the [Pokémon file](https://github.com/fanzeyi/pokemon.json/blob/master/pokedex.json) to fetch the Pokeomns docs and create the  Pokémon collection
   - We will use the [types file](https://github.com/fanzeyi/pokemon.json/blob/master/types.json) to fetch the Pokémons types
+  - You may use the *https* node.js module to fetch data from other servers.
+
 - Create a database on MongoDB Atlas that has all Pokémons documents.
 Here is a sample of a document :
 
@@ -72,10 +74,8 @@ Aee your server routes, schema rules, responses, and any other specs for the use
   - receives a get, delete, or update request for a Pokémon that does not exist
   - receives an insert request for a Pokémon that has already been inserted
   - receives request for a route that does not exist
+  - needs to relay any errors like validation or db errors
 
-
-# Hints
-- You may use the *https* node.js module to fetch data from other servers.
 
 # Deliverables
 *To be added but for now links to github, heroku, tests (Thunder Client requests), self-graded rubric, and short 2-4 minutes offline YT video demo*
