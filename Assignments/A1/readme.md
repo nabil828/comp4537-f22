@@ -1,5 +1,5 @@
 # Assignment 1 Draft - Pokémon API
-Build a Restful API server to provide data related to Pokémons.
+Build a Restful API to serve Pokémons data.
 
 
 You have to provide the following routes
