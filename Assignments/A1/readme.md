@@ -1,4 +1,4 @@
-# Assignment 1 Draft [Pokémon API - V1]
+# Assignment 1 Draft [Pokémon API]
 Build a Restful API server to provide data related to Pokémons.
 
 
