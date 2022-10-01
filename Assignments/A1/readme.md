@@ -22,7 +22,7 @@ You have to provide the following routes
   - You may use the *https* node.js module to fetch data from other servers.
 
 - Create a database on MongoDB Atlas that has all Pokémons documents.
-Here is a sample of a document :
+Here is a sample document :
 
 ```json
  {
