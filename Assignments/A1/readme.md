@@ -67,7 +67,7 @@ As listed above. Just care for the query parameters: `count` and `after`. Inspir
 ```
 <Your heroku domain name>/api/doc
 ```
-Document your server routes, schema rules, responses, and any other specs for the users to follow. 
+Document your server routes, schema rules, responses, sample requests, and any other specs for the users to follow. 
 
 ## Responses
 - You should always respond in JSON
@@ -76,6 +76,9 @@ Document your server routes, schema rules, responses, and any other specs for th
   - receives an insert request for a Pokémon that has already been inserted
   - receives request for a route that does not exist
   - needs to relay any errors like validation or db errors
+
+## Requests
+- Create a collection of requests to test your server.
 
 # Deliverables
 *To be added but for now links to github, heroku, tests (Thunder Client requests) dump, self-graded rubric, and short 2-4 minutes offline YT video demo*
