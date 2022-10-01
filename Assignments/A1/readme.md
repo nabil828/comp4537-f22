@@ -101,8 +101,8 @@ An HTTP JSON body should be used to send the document in POST, PUT, and PATCH re
 # Rubric
 *To be added*
 
-# Shorts Hints
-*To be added*
+# Shorts/Hints
+- [Bootstrapping the Assignment](https://youtu.be/QSZYqav1214) 
 
 # Due Date
 Oct the 9th Midnight.
