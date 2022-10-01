@@ -96,7 +96,7 @@ For each of the previous request, a *success* response should be returned to a c
 
 An HTTP JSON body should be used to send the document in POST, PUT, and PATCH requests.
 
-[My Tests](/thunder-collection_Pokemons.json)
+[My Tests](./thunder-collection_Pokemons.json)
 
 # Rubric
 *To be added*
