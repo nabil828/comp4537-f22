@@ -17,8 +17,8 @@ You have to provide the following routes
 # Requirements 
 ## DB - how to create?
 - Your server has to fetch the data from [this GitHub repo](https://github.com/fanzeyi/pokemon.json) dynamically.
-  - We will use the [Pokémon file](https://github.com/fanzeyi/pokemon.json/blob/master/pokedex.json) to fetch the Pokeomns docs and create the  Pokémon collection
-  - We will use the [types file](https://github.com/fanzeyi/pokemon.json/blob/master/types.json) to fetch the Pokémons types
+  - We will use this [Pokémon file](https://github.com/fanzeyi/pokemon.json/blob/master/pokedex.json) to fetch the Pokeomns docs and create the  Pokémon collection
+  - We will use this [types file](https://github.com/fanzeyi/pokemon.json/blob/master/types.json) to fetch the Pokémons types
   - You may use the *https* node.js module to fetch data from other servers.
 
 - Create a database on MongoDB Atlas that has all Pokémons documents.
@@ -92,7 +92,7 @@ Try to test your API server by sending the following
 - PUT request to upsert a Pokémon. `id` path parameter should be valid. 
 - PATCH request to patch an existing Pokémon. `id` path parameter should be valid.
 
-For each of the previous request, a *success* response should be returned to a client to indicate a successful insertion to the db.
+For each of the previous requests, a *success* response should be returned to a client to indicate a successful insertion to the db. 
 
 An HTTP JSON body should be used to send the document in POST, PUT, and PATCH requests.
 
