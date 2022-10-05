@@ -121,7 +121,7 @@ An HTTP JSON body should be used to send the document in POST, PUT, and PATCH re
 [Draft Rubric](./rubric.md)
 
 # API Doc Deliverable
-Check [https://gist.github.com/iros/3426278]
+Check https://gist.github.com/iros/3426278
 
 # Shorts/Hints
 - [Bootstrapping the Assignment](https://youtu.be/QSZYqav1214) 
