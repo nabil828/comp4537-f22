@@ -1,3 +1,19 @@
+# Assignment 1 - Pokémon API
+Build a Restful API to serve Pokémons data.
+
+You have to provide the following routes
+
+```js
+// app.get('/api/v1/pokemons?count=2&after=10')     // - get all the pokemons after the 10th. List only Two.
+// app.post('/api/v1/pokemon')                      // - create a new pokemon
+// app.get('/api/v1/pokemon/:id')                   // - get a pokemon
+// app.get('/api/v1/pokemonImage/:id')              // - get a pokemon Image URL
+// app.put('/api/v1/pokemon/:id')                   // - upsert a whole pokemon document
+// app.patch('/api/v1/pokemon/:id')                 // - patch a pokemon document or a
+                                                    //   portion of the pokemon document
+// app.delete('/api/v1/pokemon/:id')                // - delete a  pokemon 
+```
+
 Table of Contents
 =================
 
@@ -16,20 +32,6 @@ Table of Contents
 * [Shorts/Hints](#shortshints)
 * [Due Date](#due-date)
 
-# Assignment 1 - Pokémon API
-Build a Restful API to serve Pokémons data.
-
-You have to provide the following routes
-```js
-// app.get('/api/v1/pokemons?count=2&after=10')     // - get all the pokemons after the 10th. List only Two.
-// app.post('/api/v1/pokemon')                      // - create a new pokemon
-// app.get('/api/v1/pokemon/:id')                   // - get a pokemon
-// app.get('/api/v1/pokemonImage/:id')              // - get a pokemon Image URL
-// app.put('/api/v1/pokemon/:id')                   // - upsert a whole pokemon document
-// app.patch('/api/v1/pokemon/:id')                 // - patch a pokemon document or a
-                                                    //   portion of the pokemon document
-// app.delete('/api/v1/pokemon/:id')                // - delete a  pokemon 
-```
 
 # Requirements 
 ## DB - how to create?
