@@ -1,5 +1,5 @@
 # Total 8 marks
-- [6] Basic Routes  
+- [7] Basic Routes  
   - GET [3]
     - [.5] GETing all the pokémons. 
     - [.5] GETing all the pokémons - missing `count` or `after`. 
