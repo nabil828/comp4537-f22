@@ -99,7 +99,7 @@ An HTTP JSON body should be used to send the document in POST, PUT, and PATCH re
 [My Tests](./thunder-collection_Pokemons.json)
 
 # Rubric
-[Draft Rubric](./rubric.draft.md)
+[Draft Rubric](./rubric.md)
 
 # API Doc Deliverable
 Check [https://gist.github.com/iros/3426278]

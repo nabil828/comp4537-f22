@@ -34,10 +34,10 @@ Demonstrating the following in a YT short video
     - [✔] GETing a pokémon. 
     - [✔] GETing a pokémon - pokémon not found. 
     - [✔] GETing a pokémon - improper key used to get a pokémon.
-  - POST [2]
-    - [.5] POSTing a pokémon. 
-    - [.75] POSTing a pokémon - improper data
-    - [.75] POSTing a pokémon - duplicate pokémon  
+  - POST [1]
+    - [✔] POSTing a pokémon. 
+    - [✔]] POSTing a pokémon - improper data
+    - [✔] POSTing a pokémon - duplicate pokémon  
   - DEL [1]
     - [✔] DELetting a pokémon. 
     - [✔] DELetting a pokémon - pokémon not found
