@@ -99,7 +99,8 @@ An HTTP JSON body should be used to send the document in POST, PUT, and PATCH re
 [My Tests](./thunder-collection_Pokemons.json)
 
 # Rubric
-*To be added*
+[Draft Rubric](./rubric.draft.md)
+
 
 # Shorts/Hints
 - [Bootstrapping the Assignment](https://youtu.be/QSZYqav1214) 
