@@ -1,6 +1,23 @@
+Table of Contents
+=================
+
+* [Assignment 1 - Pokémon API](#assignment-1---pokémon-api)
+* [Requirements](#requirements)
+   * [DB - how to create?](#db---how-to-create)
+   * [Routes](#routes)
+   * [Schema](#schema)
+   * [API Docs](#api-docs)
+   * [Responses](#responses)
+   * [Requests](#requests)
+* [Deliverables](#deliverables)
+* [Tests](#tests)
+* [Rubric](#rubric)
+* [API Doc Deliverable](#api-doc-deliverable)
+* [Shorts/Hints](#shortshints)
+* [Due Date](#due-date)
+
 # Assignment 1 - Pokémon API
 Build a Restful API to serve Pokémons data.
-
 
 You have to provide the following routes
 ```js
