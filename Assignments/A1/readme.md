@@ -86,7 +86,7 @@ As listed above. Just care for the query parameters: `count` and `after`. Inspir
 ```
 <Your heroku domain name>/api/doc
 ```
-Document your server routes, schema rules, responses, sample requests, and any other specs for the users to follow. 
+Document your server routes, schema rules, responses, sample requests, and any other specs for the users to follow. Check https://gist.github.com/iros/3426278 for a sample.
 
 ## Responses
 - You should always respond in JSON
@@ -120,8 +120,6 @@ An HTTP JSON body should be used to send the document in POST, PUT, and PATCH re
 # Rubric
 [Draft Rubric](./rubric.md)
 
-# API Doc Deliverable
-Check https://gist.github.com/iros/3426278
 
 # Shorts/Hints
 - [Bootstrapping the Assignment](https://youtu.be/QSZYqav1214) 
