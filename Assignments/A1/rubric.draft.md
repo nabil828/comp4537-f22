@@ -10,8 +10,8 @@ Demonstrating the following in a YT short video
     - [.5] GETing a pokémon - improper key used to get a pokémon.
   - POST [1]
     - [.5] POSTing a pokémon. 
-    - [.75] POSTing a pokémon - improper data
-    - [.75] POSTing a pokémon - duplicate pokémon  
+    - [.25] POSTing a pokémon - improper data
+    - [.25] POSTing a pokémon - duplicate pokémon  
   - DEL [1]
     - [.5] DELetting a pokémon. 
     - [.5] DELetting a pokémon - pokémon not found
@@ -22,6 +22,32 @@ Demonstrating the following in a YT short video
     - [.5] PATCHing a pokémon. 
     - [.5] PATCHing a pokémon - pokémon not found
 - Improper Route [1]
+
+# Sample Graded Rubric
+# Total 8 marks
+Demonstrating the following in a YT short video
+- [?] Basic Routes  
+  - GET [2.5]
+    - [X] GETing all the pokémons. 
+    - [✔] GETing all the pokémons - missing `count` or `after`. 
+    - [✔] GETing all the pokémons - improper values for `count` or `after`. 
+    - [✔] GETing a pokémon. 
+    - [✔] GETing a pokémon - pokémon not found. 
+    - [✔] GETing a pokémon - improper key used to get a pokémon.
+  - POST [2]
+    - [.5] POSTing a pokémon. 
+    - [.75] POSTing a pokémon - improper data
+    - [.75] POSTing a pokémon - duplicate pokémon  
+  - DEL [1]
+    - [✔] DELetting a pokémon. 
+    - [✔] DELetting a pokémon - pokémon not found
+  - PUT [?]
+    - [?] PUTting a pokémon. 
+    - [✔] POSTing a pokémon - upsert
+  - PATCH [1]
+    - [✔] PATCHing a pokémon. 
+    - [✔] PATCHing a pokémon - pokémon not found
+- Improper Route [✔]
 
 # Penalties
 I will penalize you for 

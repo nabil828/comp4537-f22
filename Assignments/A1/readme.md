@@ -1,4 +1,4 @@
-# Assignment 1 Draft v2 - Pokémon API
+# Assignment 1 - Pokémon API
 Build a Restful API to serve Pokémons data.
 
 
