@@ -1,4 +1,5 @@
 # Total 8 marks
+Demonstrating the following in a YT short video
 - [7] Basic Routes  
   - GET [3]
     - [.5] GETing all the pokémons. 
@@ -23,5 +24,9 @@
 - Improper Route [1]
 
 # Penalties
-I will penalize you for improper/missing GIT commits, server crashes, missing deliverables, and/or late submission.
+I will penalize you for 
+- improper/missing GIT commits, 
+- server crashes,
+- missing deliverables, and/or 
+- late submission.
 
