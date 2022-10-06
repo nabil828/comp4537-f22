@@ -134,4 +134,70 @@ app.METHOD(route, [r1, r2], ()=>{})
 - Third party (helmet, cors, passport, morgan )
 [Check more!](http://expressjs.com/en/resources/middleware/morgan.html)
 
+# `next` vs return `next()`
+https://stackoverflow.com/questions/16810449/when-to-use-next-and-return-next-in-node-js
+![next vs return next](https://cdn.discordapp.com/attachments/1016552851322978434/1027345875577610343/unknown.png)
 
+# `next` vs `next('route')`
+
+```js
+
+//routes
+app.get('/users', (req, res, next) => {
+  console.log("1");
+  next()
+}, (req, res, next) => {
+  console.log("2");
+  // res.send("users2")
+  next()
+}, (req, res, next) => {
+  console.log("3");
+  next()
+})
+
+app.get('/users', (req, res) => {
+  console.log("4");
+  res.send("users")
+})
+
+```
+
+Output
+```
+1
+2
+3
+4
+```
+
+where as
+
+
+```js
+
+//routes
+app.get('/users', (req, res, next) => {
+  console.log("1");
+  next()
+}, (req, res, next) => {
+  console.log("2");
+  // res.send("users2")
+  next()
+}, (req, res, next) => {
+  console.log("3");
+  next()
+})
+
+app.get('/users', (req, res) => {
+  console.log("4");
+  res.send("users")
+})
+
+```
+
+Output
+```
+1
+2
+4
+```
