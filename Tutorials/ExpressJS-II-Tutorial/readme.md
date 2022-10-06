@@ -5,6 +5,15 @@ A Middleware is a function that executes somewhat during the request-response cy
 req => middleware => res
 ```
 
+Table of Contents
+=================
+
+* [ExpressJS Middleware](#expressjs-middleware)
+* [Logger Middleware](#logger-middleware)
+* [Multiple Middleware Functions](#multiple-middleware-functions)
+* [Middleware Options](#middleware-options)
+* [next vs return next()](#next-vs-return-next)
+* [next vs next('route')](#next-vs-nextroute)
 
 > Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
 
