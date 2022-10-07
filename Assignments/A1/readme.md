@@ -100,7 +100,12 @@ Document your server routes, schema rules, responses, sample requests, and any o
 - Create a collection of requests to test your server.
 
 # Deliverables
-*To be added but for now links to github, heroku, tests (Thunder Client requests) dump, self-graded rubric, and short 2-4 minutes offline YT video demo*
+- GitHub Links for
+  - Code
+  - Requests/Tests (Thunder Client requests) dump
+  - Self-graded rubric
+- Heroku,
+- YT link: short 2-4 minutes 
 
 # Tests
 Try to test your API server by sending the following
