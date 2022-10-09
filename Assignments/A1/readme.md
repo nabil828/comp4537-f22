@@ -130,6 +130,8 @@ Check https://gist.github.com/iros/3426278
 
 # Shorts/Hints
 - [Bootstrapping the Assignment](https://youtu.be/QSZYqav1214) 
+- [How to record, upload, and share a YT video](https://youtu.be/irdfmNMKmRU) 
+
 
 # Due Date
 Oct the 9th Midnight.
