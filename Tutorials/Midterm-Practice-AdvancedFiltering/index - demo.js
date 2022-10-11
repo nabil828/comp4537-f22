@@ -98,19 +98,20 @@ app.listen(process.env.port || port, async () => {
 // })
 
 app.get('/pokemonsAdvancedFiltering', async (req, res) => {
-  const { id, base, type, name, sort, filteredProperty } = req.query
+  const { id, 'base.HP': baseHP, type, name, sort, filteredProperty } = req.query
   let query = {}
   if (id) { query.id = id }
-  if (base)
-    if (base.HP) { query.base.HP = base.HP }
+
+  if (baseHP) {
+    query["base.HP"] = Number(baseHP)
+  }
 
   if (type) {
     query.type = {
       $in: type.split(",").map(item => item.trim())
     }
   }
-
-
+  console.log(query)
   const mongooseQuery = pokeModel.find(query);
   if (sort) {
     mongooseQuery.sort(sort)
@@ -120,5 +121,10 @@ app.get('/pokemonsAdvancedFiltering', async (req, res) => {
     // mongooseQuery.select("-_id")
   }
   const pokemons = await mongooseQuery;
-  res.send(pokemons);
+  console.log(pokemons);
+  res.send({
+    hits: pokemons,
+    page: 1,
+    pageSize: 20
+  });
 })
