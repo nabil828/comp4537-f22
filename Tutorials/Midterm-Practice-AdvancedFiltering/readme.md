@@ -15,17 +15,23 @@ To get a list of pokémons by a specified query.
 
 ---
 ### URL Query Parameters
-Four optional parameters -  `query`, `sort`, `filteredProperty`, `hitsPerPage`, and `page`.
+Four optional parameters -  `<query>`, `sort`, `filteredProperty`, `hitsPerPage`, and `page`.
 
 | Parameter | Default value |
 |---|---|
-|`query`|  would return all the pokémons if not specified|
+|`<query>`|  would return all the pokémons if not specified|
 |`sort`|  sort based on some property. By default, sort by pokémon id ascendingly. |
 |`filteredProperty`|  would to return all the pokémons' properties if not specified|
 |`page`| would return page number 1 by default |
 |`hitsPerPage`| would control page size. Five pokemons by default |
 
-#### `query`
+#### `<query>`
+`<query>` is a query parameter that would be substituted with any of a pokémon fields:
+
+```
+id, english.name, base.HP, type, ..etc
+``` 
+
 Example all the following requests, should receive the same output:
 
 ```
