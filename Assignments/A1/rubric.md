@@ -36,13 +36,13 @@ Demonstrating the following in a YT short video
     - [✔] GETing a pokémon - improper key used to get a pokémon.
   - POST [1]
     - [✔] POSTing a pokémon. 
-    - [✔]] POSTing a pokémon - improper data
+    - [✔] POSTing a pokémon - improper data
     - [✔] POSTing a pokémon - duplicate pokémon  
   - DEL [1]
     - [✔] DELetting a pokémon. 
     - [✔] DELetting a pokémon - pokémon not found
   - PUT [?]
-    - [?] PUTting a pokémon. 
+    - [?] PUTing a pokémon. 
     - [✔] POSTing a pokémon - upsert
   - PATCH [1]
     - [✔] PATCHing a pokémon. 
