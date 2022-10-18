@@ -1,4 +1,4 @@
-# Query Arithmetic Comparison Operators  [25]
+# Query Arithmetic Comparison Operators  [18]
 Add to your A1, the following route
 
 `app.get("/pokemonsAdvancedFiltering", ()=>{})` that would handle query comparison operators using the following query parameter:
@@ -129,13 +129,13 @@ This route should compare the stats in the `base` field:
 using the six arithmetic operators: `<, <=, >, >=, ==, !=`.
 
 ## Hints
-- [5/25] You should split the value of `comparisonOperators` using the character `,` 
-- [5/25] Use REGEX to find and replace the arithmetic operator with mongoose query parameters `$lt, $gte, ..etc.
-- [5/25] check the `replace(//, (match)=>{} )` doc to replace the match with return value of the call back function.
-- [5/25] Split the string from previous step into three parts: `stat`, `mongooseOperator`, and `value`.
-- [5/25] Use the previous three parts to execute the mongoose find query.
+- [3/25] You should split the value of `comparisonOperators` using the character `,` 
+- [3/25] Use REGEX to find and replace the arithmetic operator with mongoose query parameters `$lt, $gte, ..etc.
+- [3/25] check the `replace(//, (match)=>{} )` doc to replace the match with return value of the call back function.
+- [3/25] Split the string from previous step into three parts: `stat`, `mongooseOperator`, and `value`.
+- [3/25] Use the previous three parts to execute the mongoose find query.
 
-# Query `push` Operator  [5]
+# Query `push` Operator  [6]
 Add the following route
 
 `app.patch("/pokemonsAdvancedUpdate", ()=>{})` that would handle a push-operator update query using the following query parameter:
@@ -181,8 +181,8 @@ would push `Electric` and `Water` types to thepokémon with `id=1`
 ```
 
 ## Hints
-- [2/5] read the query parameter, split it on `,` and trim it from whitespace and `[` or `]` to  an array
-- [3/5] for each element of the array, execute the mongoose updates similar to the following update queries:
+- [2/6] read the query parameter, split it on `,` and trim it from whitespace and `[` or `]` to  an array
+- [3/6] for each element of the array, execute the mongoose updates similar to the following update queries:
 ```js
 { '$push': { type: 'Electric' } }
 { '$push': { type: 'Water' } }
