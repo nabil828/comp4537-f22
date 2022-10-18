@@ -1,6 +1,6 @@
 # Submit six letters answers for the following six questions in order. For example, `ABCDEE`. 
 
- 
+  
 What is the output following query?
 
 ```js
