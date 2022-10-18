@@ -135,10 +135,10 @@ using the six arithmetic operators: `<, <=, >, >=, ==, !=`.
 - [3/18] Split the string from previous step into three parts: `stat`, `mongooseOperator`, and `value`.
 - [3/18] Use the previous three parts to execute the mongoose find query.
 
-# Query `push` Operator  [6]
+# Query `push` Operator of type  [6]
 Add the following route
 
-`app.patch("/pokemonsAdvancedUpdate", ()=>{})` that would handle a push-operator update query using the following query parameter:
+`app.patch("/pokemonsAdvancedUpdate", ()=>{})` that would handle a push-operator update query for pokémon type using the following query parameter:
 ```js
 pushOperator
 ```
