@@ -107,8 +107,7 @@ Check all the four returned pokémons
       ],
       "__v": 0
     }
-  ],
-  "key": "asldkasdk"
+  ]
 }
 ```
 
