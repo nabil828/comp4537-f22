@@ -129,11 +129,11 @@ This route should compare the stats in the `base` field:
 using the six arithmetic operators: `<, <=, >, >=, ==, !=`.
 
 ## Hints
-- [3/24] You should split the value of `comparisonOperators` using the character `,` 
-- [3/24] Use REGEX to find and replace the arithmetic operator with mongoose query parameters `$lt, $gte, ..etc.
-- [3/24] check the `replace(//, (match)=>{} )` doc to replace the match with return value of the call back function.
-- [3/24] Split the string from previous step into three parts: `stat`, `mongooseOperator`, and `value`.
-- [3/24] Use the previous three parts to execute the mongoose find query.
+- [3/18] You should split the value of `comparisonOperators` using the character `,` 
+- [3/18] Use REGEX to find and replace the arithmetic operator with mongoose query parameters `$lt, $gte, ..etc.
+- [3/18] check the `replace(//, (match)=>{} )` doc to replace the match with return value of the call back function.
+- [3/18] Split the string from previous step into three parts: `stat`, `mongooseOperator`, and `value`.
+- [3/18] Use the previous three parts to execute the mongoose find query.
 
 # Query `push` Operator  [6]
 Add the following route
