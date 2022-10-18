@@ -24,8 +24,6 @@ const start = async () => {
 start()
 
 
-
-
 app.get('/api/v1/pokemons', async (req, res) => {
   console.log("GET /api/v1/pokemons");
   if (!req.query["count"])
