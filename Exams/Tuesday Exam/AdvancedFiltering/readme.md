@@ -130,7 +130,7 @@ using the six arithmetic operators: `<, <=, >, >=, ==, !=`.
 
 ## Hints
 - [3/18] You should split the value of `comparisonOperators` using the character `,` 
-- [3/18] Use REGEX to find and replace the arithmetic operator with mongoose query parameters `$lt, $gte, ..etc.
+- [3/18] Use REGEX to find and replace the arithmetic operator with mongoose query parameters `$lt`, `$gte`, ..etc.
 - [3/18] check the `replace(//, match => match + "-" )` doc to replace the match with the return value of the call back function.
 - [3/18] Split the string from previous step into three parts: `stat`, `mongooseOperator`, and `value`.
 - [3/18] Use the previous three parts to execute the mongoose find query.
@@ -145,7 +145,7 @@ pushOperator
 
 For example, the following *patch* request
 `http://localhost:5000/pokemonsAdvancedUpdate?id=1&pushOperator=[Electric, Water]`
-would push `Electric` and `Water` types to thepokémon with `id=1`
+would push `Electric` and `Water` types to the pokémon with `id=1`
 
 ```js
 {
