@@ -153,9 +153,7 @@ Example 1
 app.get('/', (req, res) => {
   setTimeout(() => {
     try {
-      throw new Error('BROKEN')     // This will crash the server
-      // Express will not catch this on its own.
-      // Client won't be able to send subsequent requests!
+      throw new Error('BROKEN')     // This will crash not crash the server
       res.send('Hello World');
     } catch (error) {
       res.send('Error');
@@ -227,9 +225,7 @@ Example 1
 app.get('/', (req, res, next) => {
   setTimeout(() => {
     try {
-      throw new Error('BROKEN')     // This will crash the server
-      // Express will not catch this on its own.
-      // Client won't be able to send subsequent requests!
+      throw new Error('BROKEN')     // This will not crash the server
       res.send('Hello World');
     } catch (error) {
       next(error)
@@ -416,7 +412,13 @@ app.use((err, req, res, next) => {
 })
 
 ```
-
+<details>
+<summary>
+Hint 
+</summary>
+Catch block is not present when asynchronous callback is executed
+An asynchronous exception is uncatchable because the intended catch block is not present when the asynchronous callback is executed. Instead, the exception will propagate all the way and terminate the program
+</details>
 
 # Custom errors, extending Error
 When we develop something, we often need our own error classes to reflect specific things that may go wrong in our tasks. For example, in our pokemon API, errors in client's request might triggered as `PokemonBadRequest`, for database operations `PokemonDbError`, for searching operations `PokemonNotFoundError` and so on.
