@@ -84,12 +84,24 @@ app.get('/', (req, res) => {
 Example 2
 </summary>
 
-```js
+<!-- ```js
 
 app.get('/', async (req, res) => {
   await new Promise(resolve => {
     throw new Error('Broken')
     setTimeout(resolve, 1000)
+  });
+  res.send('Hello World');
+});
+``` -->
+
+```
+app.get('/', async (req, res) => {
+  await new Promise(resolve => {
+    setTimeout(() => {
+      throw new Error('Broken')
+      resolve()
+    }, 1000)
   });
   res.send('Hello World');
 });
