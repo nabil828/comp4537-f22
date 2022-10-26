@@ -351,4 +351,67 @@ app.use(errorHandler)
 
 ```
 
+# In-Class Exercise
+## Problem 1 
+Why the following error handler middleware is not executing 
+
+```js
+const express = require('express');
+const app = express();
+app.listen(5000, () => console.log('Server is listening on port 5000'));
+
+app.use((err, req, res, next) => {
+  console.log("my error handler");
+  // console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
+
+app.get('/', async (req, res, next) => {
+  try {
+    await new Promise(resolve => {
+      throw new Error('Broken')
+      setTimeout(() => {
+        resolve()
+      }, 1000)
+    });
+    res.send('Hello World');
+  } catch (err) {
+    console.log("catch");
+    next(err)
+  }
+});
+```
+
+## problem 2
+In the following code, the `Error` is not being handled and the server is crashing. Fix it!
+
+```js
+const express = require('express');
+const app = express();
+app.listen(5000, () => console.log('Server is listening on port 5000'));
+
+
+app.get('/', async (req, res, next) => {
+  try {
+    await new Promise(resolve => {
+      setTimeout(() => {
+        throw new Error('Broken')
+        resolve()
+      }, 1000)
+    });
+    res.send('Hello World');
+  } catch (err) {
+    console.log("catch");
+    next(err)
+  }
+});
+
+app.use((err, req, res, next) => {
+  console.log("my error handler");
+  // console.error(err.stack)
+  res.status(500).send('Something broke!')
+})
+
+```
+
 
