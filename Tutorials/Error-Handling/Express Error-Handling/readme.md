@@ -79,9 +79,33 @@ app.get('/', (req, res) => {
 </details>
 
 
+
+
 <details>
 <summary>
 Example 2
+</summary>
+
+```js
+app.get('/', async (req, res) => {
+  let aPromise = new Promise(resolve => {
+    throw new Error('Broken')
+    setTimeout(resolve, 1000)
+  });
+
+  aPromise.then(() => {
+    res.send('Hello World');
+  })
+});
+```
+
+</details>
+
+
+
+<details>
+<summary>
+Example 3
 </summary>
 
 <!-- ```js
@@ -109,26 +133,6 @@ app.get('/', async (req, res) => {
 
 </details>
 
-
-<details>
-<summary>
-Example 3
-</summary>
-
-```js
-app.get('/', async (req, res) => {
-  let aPromise = new Promise(resolve => {
-    throw new Error('Broken')
-    setTimeout(resolve, 1000)
-  });
-
-  aPromise.then(() => {
-    res.send('Hello World');
-  })
-});
-```
-
-</details>
 
 
 These codes will also crash the server. Here, the client will not even get a response!
