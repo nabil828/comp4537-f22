@@ -46,7 +46,7 @@ You may test this out by visiting the other route:
 http://localhost:5000/anotherRoute
 ```
 
-The reason why the server is not crashing, is because of the express.js built-in handler.
+The reason why the server is not crashing, is because of the Express Default and built-in handler.
 
 ## Express Default Error Handler
 The default error handler is a middleware provided by Express to catch all the triggered errors with **almost** no extra work from you. I say almost the default error handler needs you to signal asynchronous errors using `next` function.
