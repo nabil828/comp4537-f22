@@ -1,3 +1,12 @@
+- [Error handling](#error-handling)
+  * [Exceptions for signaling bugs](#exceptions-for-signaling-bugs)
+  * [Exceptions for anticipated failures](#exceptions-for-anticipated-failures)
+  * [Special results](#special-results)
+- [Throw, and Try...Catch...Finally](#throw--and-trycatchfinally)
+- [The Error Object](#the-error-object)
+- [The throw Statement](#the-throw-statement)
+- [Summary](#summary)
+
 # Error handling
 All the material of this lecture is derived from 
 - https://expressjs.com/en/guide/error-handling.html
