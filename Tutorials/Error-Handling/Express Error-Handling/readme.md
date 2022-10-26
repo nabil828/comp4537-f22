@@ -9,10 +9,6 @@
   * [Define error-handling middleware last](#define-error-handling-middleware-last)
   * [You may define several error-handling middleware functions](#you-may-define-several-error-handling-middleware-functions)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 # Express.js Error Handling
 
