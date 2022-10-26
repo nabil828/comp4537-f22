@@ -421,7 +421,7 @@ An asynchronous exception is uncatchable because the intended catch block is not
 </details>
 
 # Custom errors, extending Error
-When we develop an API, we often need our own error classes to reflect specific things that may go wrong in our tasks. For example, in our pokemon API, errors in client's request might triggered as `PokemonBadRequest`, for database operations `PokemonDbError`, for searching operations `PokemonNotFoundError` and so on.
+When we develop an API, we often need our own error classes to reflect specific things that may go wrong in our tasks. For example, in our Pokémon API, errors in client's request might triggered as `PokemonBadRequest`, for database operations `PokemonDbError`, for searching operations `PokemonNotFoundError` and so on.
 
 JavaScript allows to use throw with any argument, so technically our custom error classes don’t need to inherit from Error. But if we inherit, then it becomes possible to use `obj instanceof` Error to identify error objects. So it’s better to inherit from it.
 
