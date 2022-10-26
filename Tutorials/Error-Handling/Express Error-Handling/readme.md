@@ -164,6 +164,27 @@ app.get('/', (req, res) => {
 Example 2
 </summary>
 
+```js
+app.get('/', async (req, res) => {
+  try {
+    await new Promise(resolve => {
+      throw new Error('Broken')
+      setTimeout(resolve, 1000)
+    });
+    res.send('Hello World');
+  } catch {
+    res.send('Error');
+  }
+});
+```
+</details>
+
+
+<details>
+<summary>
+Example 3
+</summary>
+
 
 ```js
 app.get('/', async (req, res) => {
@@ -180,29 +201,6 @@ app.get('/', async (req, res) => {
 
 ```
 </details>
-
-
-
-<details>
-<summary>
-Example 3
-</summary>
-
-```js
-app.get('/', async (req, res) => {
-  try {
-    await new Promise(resolve => {
-      throw new Error('Broken')
-      setTimeout(resolve, 1000)
-    });
-    res.send('Hello World');
-  } catch {
-    res.send('Error');
-  }
-});
-```
-</details>
-
 
 
 
