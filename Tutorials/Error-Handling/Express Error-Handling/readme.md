@@ -138,7 +138,7 @@ app.get('/', async (req, res) => {
 
 
 
-These codes will also crash the server. Here, the client will not even get a response!
+All the previous codes will crash the server. Furthermore, the client will not even get a response!
 
 
 In order, to prevent this crash, you have to 
