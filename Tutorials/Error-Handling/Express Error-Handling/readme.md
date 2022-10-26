@@ -95,7 +95,7 @@ app.get('/', async (req, res) => {
 });
 ``` -->
 
-```
+```js
 app.get('/', async (req, res) => {
   await new Promise(resolve => {
     setTimeout(() => {
