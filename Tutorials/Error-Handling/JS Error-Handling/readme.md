@@ -111,7 +111,59 @@ Error
 test
 ```
 
-# JavaScript Throws Errors
+# Custom errors, extending Error
+When we develop something, we often need our own error classes to reflect specific things that may go wrong in our tasks. For example, in our pokemon API, errors in client's request might triggered as `PokemonBadRequest`, for database operations `PokemonDbError`, for searching operations `PokemonNotFoundError` and so on.
+
+JavaScript allows to use throw with any argument, so technically our custom error classes don’t need to inherit from Error. But if we inherit, then it becomes possible to use `obj instanceof` Error to identify error objects. So it’s better to inherit from it.
+
+As the API grows, our own errors naturally form a hierarchy. For instance, `PokemonBadRequestMissingID` may inherit from `PokemonBadRequest`, and so on.
+
+## Example
+
+```js
+const express = require('express');
+const app = express();
+app.listen(5000, () => console.log('Server is listening on port 5000'));
+
+class PokemonBadRequest extends Error {
+  constructor(message) {
+    super(message); // (1)
+    this.name = "PokemonBadRequest"; // (2)
+  }
+}
+
+class PokemonBadRequestMissingID extends PokemonBadRequest {
+  constructor(message) {
+    super(message); // (1)
+    this.name = "PokemonBadRequestMissingID"; // (2)
+  }
+}
+
+app.get('/pokemon', (req, res, next) => {
+  if (req.query.id === undefined) 
+    return next(new PokemonBadRequestMissingID('Missing ID'));
+  res.send('Pokemon all good!');
+});
+
+app.get('/', async (req, res, next) => {
+  console.log('Hello World');
+  res.send('Hello World');
+});
+
+app.use((err, req, res, next) => {
+  console.log("my error handler");
+  // console.error(err.stack)
+  // res.status(500).send('Something broke!')
+  res.status(500).send(err.name + " " + err.message)
+})
+
+
+
+```
+
+
+
+# Summary
 When an error occurs, JavaScript will normally stop and generate an error message.
 
 The technical term for this is: JavaScript will throw an exception (throw an error).
