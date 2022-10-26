@@ -427,6 +427,17 @@ JavaScript allows to use throw with any argument, so technically our custom erro
 
 As the API grows, our own errors naturally form a hierarchy. For instance, `PokemonBadRequestMissingID` may inherit from `PokemonBadRequest`, and so on.
 
+Here is a "pseudocode" for the built-in Error class defined by JavaScript itself:
+```js
+class Error {
+  constructor(message) {
+    this.message = message;
+    this.name = "Error"; // (different names for different built-in error classes)
+    this.stack = <call stack>; // non-standard, but most environments support it
+  }
+}
+```
+
 ## Example
 
 ```js
