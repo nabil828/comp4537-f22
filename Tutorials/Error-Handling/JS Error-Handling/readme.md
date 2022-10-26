@@ -1,5 +1,5 @@
 # Error handling
-The material of this lecture is derived from 
+All the material of this lecture is derived from 
 - https://expressjs.com/en/guide/error-handling.html
 - https://www.w3schools.com/js/js_errors.asp  
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
@@ -7,9 +7,7 @@ The material of this lecture is derived from
 
 
 ## Exceptions for signaling bugs
-You’ve probably already seen some exceptions in your JS programming so far. For example, in JS:
-
-Six different values can be returned by the error name property:
+You’ve probably already seen some exceptions in your JS programming so far. For example, in JS, different values can be returned by the error name property:
 
 |Error Name	|Description|
 |---|---|
