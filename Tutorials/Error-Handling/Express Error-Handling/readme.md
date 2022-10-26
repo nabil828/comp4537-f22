@@ -211,7 +211,7 @@ app.get('/', async (req, res) => {
 
 
 ### OR Pass The Exception Express Default Error Handler:
-You could the third argument of any middleware function, `next`, to pass an Error from middleware to another. The Express default Error handler, is the last middleware in the middlewares chain. Remember that we have used `next` before to control the execution of this chain. The only difference here, is that we are passing the Error as an input so some error handler eventually catches this error. 
+You could the third argument of any middleware function, `next`, to pass an Error from middleware to another. The Express default Error handler, is the last middleware in the middlewares chain. Remember that we have used `next` before to control the execution of this chain. The only difference here, is that we are passing the Error object as an input so some error handler eventually catches this error. 
 
 
 
