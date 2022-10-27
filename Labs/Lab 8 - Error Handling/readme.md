@@ -18,7 +18,7 @@ Similar to what we did in the [last example](https://github.com/nabil828/comp453
 - You should overwrite the default Express error handler.
 - The default Express error handler is just a middleware. You may use it globally using `app.use()`. You may define in a sperate file. And you may break it into multiple middlewares and use the `next(err)` to pass the execution from one middleware to another.
 
-# Task 4 - `Async`/`await` Wrapper
+# Task 4 - `async`/`await` Wrapper
 Use the following wrapper inside your routes to clean your code. 
 
 Source - [https://zellwk.com/blog/async-await-express/]
