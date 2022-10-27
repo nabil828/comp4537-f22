@@ -11,7 +11,7 @@ Similar to what we did in the [last example](https://github.com/nabil828/comp453
 - Raise an exception or an error every time you need to return special value. For example, returning *null*, empty arrays, or empty strings should be avoided.
 
 # Task 3 - Error Handling
-- Handle all the raised exceptions plus all anticipated exceptions from db, mongoose, JS parsing, or JS expression evaluation.   
+- Handle all the raised exceptions plus all anticipated exceptions from db, mongoose, JS parsing, or JS expression evaluation.  Your server should not crash.
 - For all exceptions, send a friendly message to the client and print out the Error name and callback stack into the server console. 
 - You should overwrite the default Express error handler.
 - The default Express error handler is just a middleware. You may use it globally using `app.use()`. You may define in a separate file. And you may break it into multiple middlewares and use the `next(err)` to pass the execution from one middleware to another.
