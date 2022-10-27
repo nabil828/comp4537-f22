@@ -6,7 +6,7 @@ It is not just the user experience that dictates why we should care for error ha
 
 
 # Task 1 - Introduce Custom API Exceptions/Errors
-Similar to what we did in the last example in the lecture, introduce new exceptions like `PokemonBadRequest`, `PokemonBadRequestMissingID`, `PokemonDbError` , or `PokemonNotFoundError`. Maintain the hierarchy between related exceptions. For example  `PokemonBadRequestMissingID` should extends `PokemonBadRequest`
+Similar to what we did in the [last example](https://github.com/nabil828/comp4537repo/tree/main/Tutorials/Error-Handling/Express%20Error-Handling#example) in the lecture, introduce new exceptions like `PokemonBadRequest`, `PokemonBadRequestMissingID`, `PokemonDbError` , or `PokemonNotFoundError`. Maintain the hierarchy between related exceptions. For example  `PokemonBadRequestMissingID` should extends `PokemonBadRequest`
 
 # Task 2 - Trigger Exceptions/Errors
 - Raise an exception or an error every time you need to signal a bad request to the client
