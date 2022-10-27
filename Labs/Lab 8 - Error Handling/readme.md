@@ -16,7 +16,7 @@ Similar to what we did in the [last example](https://github.com/nabil828/comp453
 - Handle all the raised exceptions plus all anticipated exceptions from db, mongoose, JS parsing, or JS expression evaluation.   
 - For all exceptions, send a friendly message to the client and print out the Error name and callback stack into the server console. 
 - You should overwrite the default Express error handler.
-- The default Express error handler is just a middleware. You may use it globally using `app.use()`. You may define in a sperate file. And you may break it into multiple middlewares and use the `next(err)` to pass the execution from one middleware to another.
+- The default Express error handler is just a middleware. You may use it globally using `app.use()`. You may define in a separate file. And you may break it into multiple middlewares and use the `next(err)` to pass the execution from one middleware to another.
 
 # Task 4 - `async`/`await` Wrapper
 Use the following wrapper inside your routes to clean your code. 
