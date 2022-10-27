@@ -10,7 +10,7 @@
 - [In-Class Exercise](#in-class-exercise)
   * [Problem 1](#problem-1)
   * [problem 2](#problem-2)
-- [Custom errors, extending Error](#custom-errors--extending-error)
+- [Custom exceptions/errors And Extending `Error`](#custom-exceptions-errors-and-extending--error-)
   * [Example](#example)
 
 # Express.js Error Handling
@@ -293,8 +293,8 @@ app.get('/', async (req, res, next) => {
     await new Promise(resolve => {
       throw new Error('Broken')
       setTimeout(resolve, 1000)
+      res.send('Hello World');
     });
-    res.send('Hello World');
   } catch (err) {
     next(err);
     res.send("I don't care about the error. I still want to send this response");
@@ -420,7 +420,7 @@ Catch block is not present when asynchronous callback is executed
 An asynchronous exception is uncatchable because the intended catch block is not present when the asynchronous callback is executed. Instead, the exception will propagate all the way and terminate the program
 </details>
 
-# Custom errors, extending Error
+# Custom exceptions/errors And Extending `Error`
 When we develop an API, we often need our own error classes to reflect specific things that may go wrong in our tasks. For example, in our Pokémon API, errors in client's request might triggered as `PokemonBadRequest`, for database operations `PokemonDbError`, for searching operations `PokemonNotFoundError` and so on.
 
 JavaScript allows to use throw with any argument, so technically our custom error classes don’t need to inherit from Error. But if we inherit, then it becomes possible to use `obj instanceof` Error to identify error objects. So it’s better to inherit from it.
