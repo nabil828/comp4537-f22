@@ -46,6 +46,8 @@ app.get('/api/v1/pokemons', asyncWrapper(async (req, res) => {
 
 # Deliverables 
 Modify your A1 work and handle all the Errors gracefully. 
+
 Submit a GitHub link.
+
 Due in a week.
 
