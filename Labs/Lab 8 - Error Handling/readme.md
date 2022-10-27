@@ -5,7 +5,7 @@ It is not just the user experience that dictates why we should care for error ha
 
 
 
-# Task 1 - Introduce Custom API Exceptions 
+# Task 1 - Introduce Custom API Exceptions/Errors
 Similar to what we did in the last example in the lecture, introduce new exceptions like `PokemonBadRequest`, `PokemonBadRequestMissingID`, `PokemonDbError` , or `PokemonNotFoundError`. Maintain the hierarchy between related exceptions. For example  `PokemonBadRequestMissingID` should extends `PokemonBadRequest`
 
 # Task 2 - Trigger Exceptions/Errors
