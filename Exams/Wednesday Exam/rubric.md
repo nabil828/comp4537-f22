@@ -1,0 +1,11 @@
+-[/24 Marks] Part I - Delta Proxy API Server
+  -[/4] GET ALL Route
+  -[/4] GET ROUTE
+  -[/4] PUT/POST ROUTE
+  -[/3] DELETE ROUTE
+  -[/3] PATCH ROUTE
+  -[/6] Testing
+    -[/2] Test GET
+    -[/2] Test DELETE
+    -[/2] Test Patch/UPDATE/POST
+-[/6 Marks] Part II - Autocomplete Server 

@@ -1,0 +1,15 @@
+[30]Total 
+- [ 24] code
+  - [18]# Query Arithmetic Comparison Operators  
+    - [3/3] You should split the value of  comparisonOperators using the character ,
+    - [3/3] Use REGEX to find and replace the arithmetic operator with mongoose query parameters $lt, $gte, ..etc.
+    - [3/3] check the replace(//, match => match + "-" ) doc to replace the match with the return value of the call back function.
+    - [3/3] Split the string from previous step into three parts: stat, mongooseOperator, and value.
+    - [3/3] Use the previous three parts to execute the mongoose find query.
+    - [3/3] Testing
+  - [6] # Query `push` Operator for Pokémon's `type`  
+    - [2/2] read the query parameter, split it on , and trim it from whitespace and [ or ] to an array
+    - [3/3] for each element of the array, execute the mongoose updates similar to the following update queries:
+    - [1/1] Testing
+- [6] MCQ 
+  - DCECFC
