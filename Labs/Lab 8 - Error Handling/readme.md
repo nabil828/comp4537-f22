@@ -1,4 +1,4 @@
-# Error Handling
+# Pokémon Error Handling 
 Probably in A1 you have seen your node.js server crashes because of an error. And hopefully, you have tried to handle these errors. In this lab,  you should replace all your error handling logic into one place, make use of custom errors classes, and overwrite the default Express Error Handler.
 
 It is not just the user experience that dictates why we should care for error handling. Error handling is a must if we want our program to be secure, resilient, high-performing and bug-free.
