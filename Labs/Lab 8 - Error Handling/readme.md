@@ -8,7 +8,7 @@ Similar to what we did in the [last example](https://github.com/nabil828/comp453
 
 # Task 2 - Trigger Exceptions/Errors
 - Raise an exception or an error every time you need to signal a bad request to the client
-- Raise an exception or an error every time you need to return special value. For example, return null, empty arrays, or empty strings should be avoided.
+- Raise an exception or an error every time you need to return special value. For example, returning *null*, empty arrays, or empty strings should be avoided.
 
 # Task 3 - Error Handling
 - Handle all the raised exceptions plus all anticipated exceptions from db, mongoose, JS parsing, or JS expression evaluation.   
