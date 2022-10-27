@@ -37,7 +37,7 @@ const asyncWrapper = (fn) => {
 
 ```
 
-sample route usage
+Sample route usage:
 ```js
 app.get('/api/v1/pokemons', asyncWrapper(async (req, res) => {
   const docs = await pokeModel.find({})
