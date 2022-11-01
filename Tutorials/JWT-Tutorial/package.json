@@ -1,0 +1,22 @@
+{
+  "name": "jwt-tutorial",
+  "version": "1.0.0",
+  "description": "How do you make a server remember or trust a visitor?",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "session-file-store": "^1.5.0",
+    "tiny-csrf": "^1.1.3"
+  }
+}
