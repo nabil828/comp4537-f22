@@ -7,6 +7,9 @@ A website is based on the HTTP protocol. HTTP is a stateless protocol which mean
 
 # References
 - https://jwt.io/introduction
+- https://en.wikipedia.org/wiki/Cross-site_request_forgery
+- https://www.freecodecamp.org/news/authenticate-users-node-app/
+- https://www.section.io/engineering-education/session-management-in-nodejs-using-expressjs-and-express-session/
 - https://github.com/pillarjs/understanding-csrf
 - https://www.freecodecamp.org/news/authenticate-users-node-app/
 - https://www.youtube.com/watch?v=uXDnS5PcjCA
