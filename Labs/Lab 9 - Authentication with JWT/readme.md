@@ -14,7 +14,7 @@ Implement an authentication server for A1.
 - [Challenge 3](#challenge-3)
 - [Challenge 4](#challenge-4)
 
-## `dotenv` package
+## The `dotenv` package
 Use the `dotenv` to store your secrets. 
 
 To generate a random secret you may try the following to generate 64 random bytes:
@@ -90,7 +90,7 @@ module.exports = mongoose.model('pokeUser', schema) //pokeUser is the name of th
 
 ```
 
-# `/register` Route
+# The `/register` Route
 Implement a POST route to handle the following request:
 
 ```
@@ -139,8 +139,8 @@ app.post('/register', asyncWrapper(async (req, res) => {
 
 # Hashing the Password
 Use the `bcrypt` package to hash the password. 
-
-Read more - https://dev.to/sylviapap/bcrypt-explained-4k5c .
+Why? - https://blog.moertel.com/posts/2006-12-15-never-store-passwords-in-a-database.html
+How does it work? - https://dev.to/sylviapap/bcrypt-explained-4k5c .
 
 ```js
 const bcrypt = require("bcrypt")
