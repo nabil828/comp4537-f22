@@ -1,0 +1,26 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test",
+  "email": "test@test.ca"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+###
+
+GET http://localhost:5000/api/v1/pokemon/77
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzYzNGExYmI2YTEwODQ5NThmZTg3ZjUiLCJpYXQiOjE2Njc0NTE0MjB9.HgsL3XaZw_DbckwZGvdXRCb3MDcp6TpuiwkdJf_HrMo
+
+
+    

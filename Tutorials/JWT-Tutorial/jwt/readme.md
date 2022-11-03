@@ -1,5 +1,5 @@
 # Solution III - JSON Web Tokens (JWT)
-JWTs help to solve the same problem Cookies and Session try to solve; identifying and trusting requests. However, it uses tokens to pass the state back and forth between a server and a client. It is the popular authentication method for API servers. 
+JWTs help to solve the same problem Cookies and Session try to solve; identifying and trusting requests. However, it uses tokens to pass the state back and forth between a server and a client. It is the popular authentication method for API servers. It allows a client to use the same JWT token across multiple servers.
 
 ## Example - How to Authenticate a User using Sessions?
 

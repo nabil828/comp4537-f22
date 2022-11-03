@@ -1,6 +1,6 @@
 A website is based on the HTTP protocol. HTTP is a stateless protocol which means at the end of every request and response cycle, the client and the server forget about each other.
 
-# How to Mange State 
+# How to Manage State 
 - [Cookies](./cookies/readme.md)
 - [Sessions](./sessions/readme.md)
 - [JSON Web Tokes](./jwt/readme.md)
