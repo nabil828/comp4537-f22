@@ -2,13 +2,13 @@
 Implement an authentication server for A1.
 
 - [Authentication Server](#authentication-server)
-  * [`dotenv` package](#-dotenv--package)
+  * [The `dotenv` package](#the--dotenv--package)
   * [`pokeUser` Collection](#-pokeuser--collection)
-- [`/register` Route](#--register--route)
+- [The `/register` Route](#the---register--route)
 - [Hashing the Password](#hashing-the-password)
-- ['/login' Route](#--login--route)
+- [The `/login` Route](#the---login--route)
 - [Maintaining the Authentication State using JWT](#maintaining-the-authentication-state-using-jwt)
-  * [The *auth* middleware](#the--auth--middleware)
+  * [The `auth()` middleware](#the--auth----middleware)
 - [Challenge 1](#challenge-1)
 - [Challenge 2](#challenge-2)
 - [Challenge 3](#challenge-3)
