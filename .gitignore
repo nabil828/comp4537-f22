@@ -129,3 +129,7 @@ dist
 /playground
 .gitignore
 Tutorials/JWT-Tutorial/package-lock.json
+Labs/Lab 8 - Error Handling/Solution/package-lock.json
+Tutorials/Error-Handling/Express Error-Handling/package-lock.json
+Tutorials/JWT-Tutorial/cookies/demo/package-lock.json
+Tutorials/JWT-Tutorial/sessions/demo/package-lock.json

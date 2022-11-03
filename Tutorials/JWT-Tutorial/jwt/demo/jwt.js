@@ -23,7 +23,7 @@ app.post('/login', (req, res) => {
   if (req.body.username === 'admin' && req.body.password === '1234') {
     // res.cookie('auth', 'true');
     // req.session.auth = 'true';
-    res.json({ status: 'success', token: jwt.sign({ username: 'admin' }, jwtSecret) });
+    res.json({ status: 'success', token: jwt.sign({}, jwtSecret) });
     console.log('Login success');
     // res.redirect('/admin'); // redirect to admin page
   }

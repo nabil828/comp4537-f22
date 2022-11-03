@@ -75,7 +75,7 @@ app.use(session({
   saveUninitialized: true
 }))
 ```
-or in a db:
+or in a db.:
 
 ```js
 var MongoDBStore = require('connect-mongodb-session')(session);

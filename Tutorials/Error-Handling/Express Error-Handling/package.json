@@ -1,0 +1,15 @@
+{
+  "name": "express-error-handling",
+  "version": "1.0.0",
+  "description": "- [TOC](#toc)\r - [Express.js Error Handling](#expressjs-error-handling)\r   * [Express Default Error Handler](#express-default-error-handler)\r     + [Catch The Exception Explicitly:](#catch-the-exception-explicitly-)\r     + [OR Pass The Exception Express Default Error Handler:](#or-pass-the-exception-express-default-error-handler-)\r - [Check your understanding](#check-your-understanding)\r - [Writing error handlers](#writing-error-handlers)\r   * [Define error-handling middleware last](#define-error-handling-middleware-last)\r   * [You may define several error-handling middleware functions](#you-may-define-several-error-handling-middleware-functions)",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

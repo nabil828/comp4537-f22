@@ -13,6 +13,6 @@ POST http://localhost:5000/admin
 Content-Type: application/json
 
 {
-  "token":  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjY3Mjc2OTk4fQ.DVODtzNZGf_EMZcpV-C_4Ok_DvpV4aE_u0EPBUcLWsc"
+  "token":  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjY3NDE0MDk2fQ.WEa9m7HQL2gAY-Rt1tylRClYIb7ObyZ_-O-hTGQpiVc"
 }
 

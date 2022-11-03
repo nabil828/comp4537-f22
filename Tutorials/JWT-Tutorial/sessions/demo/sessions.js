@@ -3,20 +3,16 @@ const app = express();
 // const cookieParser = require('cookie-parser');
 var session = require('express-session')
 
+var FileStore = require('session-file-store')(session);
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
 })
+// app.use(cookieParser());
 
-var MongoDBStore = require('connect-mongodb-session')(session);
-
-var dbStore = new MongoDBStore({
-  uri: 'mongodb://localhost:27017/connect_mongodb_session_test',
-  collection: 'mySessions'
-});
 
 app.use(session({
-  store: dbStore,
+  store: new FileStore,
   secret: 'hello world',
   resave: true,
   saveUninitialized: true

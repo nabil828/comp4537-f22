@@ -1,10 +1,6 @@
 try {
-  let x = true
-  if (x)
-    throw new Error('test')
-}
-catch (err) {
-  // Error
+  throw new Error('Error thrown');
+} catch (err) {
   console.log(err.name);
   console.log(err.message);
 }
