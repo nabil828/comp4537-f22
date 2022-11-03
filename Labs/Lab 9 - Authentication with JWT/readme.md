@@ -175,7 +175,7 @@ Connection: close
 }
 
 ```
-# '/login' Route
+# The `/login` Route
 Code: 
 ```js
 app.post('/login', asyncWrapper(async (req, res) => {
@@ -272,7 +272,7 @@ Connection: close
 }
 ```
 
-## The *auth* middleware 
+## The `auth()` middleware 
 to protect all the Pokemon's API route
 
 ```js
