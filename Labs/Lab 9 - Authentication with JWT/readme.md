@@ -347,21 +347,50 @@ Can you split the functionally of this lab intro two servers?
   - (http://localhost:5000) Authentication server: proxy server for register and login.
   - (http://localhost:6000) API server: server data
 
-<!-- This change in implementation should abstracted from your clients. The previous requests should get the same responses. -->
+
 
 As long as the two servers share the same secret token, the same JWT token could be used for verification on both servers.
+
+Tests
+```
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test",
+  "email": "test@test.ca"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+###
+
+GET http://localhost:6000/api/v1/pokemon/77
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzY0MTNiZjc3NTM1MWM5ODJjN2JmNTciLCJpYXQiOjE2Njc1MDMwNTR9.Roe2sx28XA88BH501loULxvL_hvQ2i3dKeu6Rnr5H8k
+
+###
+```
 
 # Challenge 4  
 How to implement a `/logout` route? 
 Hints
-- if you are using cookies:
-  - set an age in *ms*:
+ - For SSR servers, If you are using sessions, check `express-session` doc to set an expiration date for a session variable.
+- For API servers that uses JWT: 
+  - If you are using cookies, set an age in *ms*:
 ```js
 res.cookie('jwtToken', token, { maxAge: 2 * 60 * 60 * 1000, httpOnly: true }); // maxAge: 2 hours
 ```
   or clear the cookie:
  ```js
  res.clearCookie("cookieToken")
- ``` 
- - If you are using sessions, check `express-session` doc to set the expiration date.
-- For JWT, use an expiration date for the JWT token. Check the `expiresIn` option for `jwt.sign()` method in the package doc. - https://www.npmjs.com/package/jsonwebtoken .  
+ ```
+  - You may also use an expiration date for a JWT token. Check the `expiresIn` option for `jwt.sign()` method in the package doc. - https://www.npmjs.com/package/jsonwebtoken .  
