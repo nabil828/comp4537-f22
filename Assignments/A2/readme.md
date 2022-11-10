@@ -81,14 +81,18 @@ Suggestion structure/schema of the *events* DB:
 ``` -->
 
 # Testing / Error Handling
-The following events should be handled as exceptions
-- While trying to login, 
-  - a User was not found in DB
-  - password is incorrect
-- While trying to access a protected route,  
-  - no Token was found in the URI.
-  - user is logged in successfully but improper token was provided in the URI. 
-  - non-admin *user* was trying to access *admin*  protected routes.
+- Proper access scenarios:
+  - A user register, log in, and access protected routes successfully.
+  - Same user log in and fail to access admin-protected routes. 
+  - After logout, a user cannot access a protected route even with a valid token.
+- Improper access scenarios: The following events should be handled as exceptions:
+  - While trying to log in, 
+    - a user was not found in DB
+    - password is incorrect
+  - While trying to access a protected route,  
+    - no Token was found in the URI.
+    - user is logged in successfully but improper token was provided in the URI. 
+    - non-admin *user* was trying to access *admin*  protected routes.
 
 # Deployment Hints
 - After users login successfully, they will receive a token which the will be using for every and each subsequent request. This token should **not** change every time the user login. Hence, a user will use the same token for across multiple sessions. To achieve this, you might want to store the token a persistent store like a DB.
