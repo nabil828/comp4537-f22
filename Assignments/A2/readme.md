@@ -1,5 +1,5 @@
 # Assignment 2 - JWT Authentication Server
-Implement an authentication server for for the Pokémon API that you have worked on far for A1. You may use my solutions for A1 or labs 6 and 9. This assignment is an extension to lab 9.
+Implement an authentication server for for the Pokémon API that you have worked on in this course. You may use my solutions for A1 or labs 6 and 9. This assignment is an extension to lab 9.
 Basically, you have to implement lab 9's challenges 2, 3, and 4 altogether.
 
 - All the following routes should be implemented:
