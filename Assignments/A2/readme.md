@@ -87,10 +87,10 @@ Suggestion structure/schema of the *events* DB:
   - *Admin* user should be able to access all routes including admin-protected routes. 
   - After logout, a user cannot access a protected route.
   - After re-login, the user should receive the same token from the first login and be able to access protected routes.
-- Improper access scenarios: The following scenarios should be handled as *exceptions* and should no go through to access protected routes.
-  - While trying to log in, 
-    - a user was not found in DB
-    - password is incorrect
+- Improper access scenarios: The following scenarios should be handled as *exceptions* and user should not access protected routes.
+  - While trying to log in, a user 
+    - was not registered
+    - provided the wrong password 
   - While trying to access a protected route,  
     - no Token was found in the URI.
     - user is logged in successfully but improper token was provided in the URI. 
