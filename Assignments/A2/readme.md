@@ -81,11 +81,13 @@ Suggestion structure/schema of the *events* DB:
 ``` -->
 
 # Testing / Error Handling
-- Proper access scenarios:
+- Proper access scenarios: 
   - A user register, log in, and access protected routes successfully.
   - Same user log in and fail to access admin-protected routes. 
-  - After logout, a user cannot access a protected route even with a valid token.
-- Improper access scenarios: The following events should be handled as exceptions:
+  - *Admin* user should be able to access admin-protected routes. 
+  - After logout, a user cannot access a protected route.
+  - After re-login, the user should receive the same token from the first login and be able to access protected routes.
+- Improper access scenarios: The following scenarios should be handled as *exceptions*:
   - While trying to log in, 
     - a user was not found in DB
     - password is incorrect
