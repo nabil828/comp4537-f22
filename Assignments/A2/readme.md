@@ -20,9 +20,7 @@ Hence, a user should login before being able to access these routes.
 
 - To maintain a logging session, you have to pass the token as a query parameter. Although this is not the best practice, we want to mimic how `openweathermap.org` uses *appid* query parameter to maintain the session of a logged user. This was Challenge 2 in lab 9.
 
-- Fulfill the requirements of challenge 3 from lab 9 by splitting the functionally of authentication to its own server.
-
-
+- Fulfill the requirements of challenge 3 from lab 9 by separating the functionally of authentication routes from the rest of other Pokémon routes.
 
 
 # Additional Role - Admin
