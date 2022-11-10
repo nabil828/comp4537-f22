@@ -96,7 +96,7 @@ Suggestion structure/schema of the *events* DB:
     - user is logged in successfully but improper token was provided in the URI. 
     - non-admin *user* was trying to access *admin*  protected routes.
 
-# Deployment Hints
+# Development Hints
 - After users login successfully, they will receive a token which the will be using for every and each subsequent request. This token should **not** change every time the user login. Hence, a user will use the same token for across multiple sessions. To achieve this, you might want to store the token a persistent store like a DB.
 
 - On user logout, the current JWT token should be invalidated or removed from the DB.
