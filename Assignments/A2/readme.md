@@ -24,7 +24,7 @@ Hence, a user should login before being able to access these routes.
 
 
 # Additional Role - Admin
-The following routes should be only accessible only to *admins*; *Admins* are user with a special role that allows them to access this route.
+The following routes should be only accessible only to *admins*; *Admins* are users with a special role that allows them to access the following routes.
 ```
 app.post('/api/v1/pokemon')                      // - create a new pokemon
 app.get('/api/v1/pokemonImage/:id')              // - get a pokemon Image URL
