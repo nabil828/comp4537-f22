@@ -103,8 +103,8 @@ The following events should be handled as exceptions
   - Demonstrate the above tests.
 - Links for
   - Code on GitHub
-  - Tests 
-    - Thunder Client/POSTMAN/REST Client Text Dump
+  - Tests Dump on GitHub
+    - Thunder Client/POSTMAN/REST Client text dump.
 
 # Rubric
 Same as the previous tests. 
