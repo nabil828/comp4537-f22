@@ -8,7 +8,7 @@ This means that instead of displaying all 809 Pokémons, you could have 81 pages
 Here’s what the app looks like with pagination.
 
 ![](https://cdn.discordapp.com/attachments/1017862173881544775/1040360698523418705/image.png)
-# Additional requirements
+# Additional Requirements
 - Show only 10 pages at a time
 - For each page, display the Pokémon in a responsive grid.
 - Hide the `prev` and `next` buttons if you are at the first or last pages, respectively.
