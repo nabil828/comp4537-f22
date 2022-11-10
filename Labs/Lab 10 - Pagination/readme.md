@@ -1,9 +1,9 @@
 # Client Side Pagination 
 Let us suppose that you are building a Pokémon client app that would use our Pokémon API server to get the data. 
 
-The client app will fetch all the Pokémons and paginate the pokemons to a user. For example, you may choose to display 10 Pokémons at a time and allow the user to navigate back and forth using `next` and `prev` buttons. Or even better, choose a page number.
+The client app will fetch all the Pokémons and paginate the Pokémons to a user. For example, you may choose to display 10 Pokémons at a time and allow the user to navigate back and forth using `next` and `prev` buttons. Or even better, choose a page number.
 
-This means that instead of displaying all 809 pokemons, you could have 81 pages with each page showing 10 records.
+This means that instead of displaying all 809 Pokémons, you could have 81 pages with each page showing 10 records.
 
 Here’s what the app looks like with pagination.
 
@@ -16,3 +16,6 @@ Here’s what the app looks like with pagination.
 
 # Challenges
 - Cache the response in browser's `localStorage` so even if you close and reopen the browser, you don't have to fetch all the Pokémons again.
+
+# To Read
+- https://www.w3schools.com/REACT/react_events.asp
