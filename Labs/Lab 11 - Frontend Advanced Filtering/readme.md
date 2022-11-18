@@ -5,4 +5,5 @@ I will leave it to you decide the filters. Try to experiment with different HTML
 
 ## Challenges
 - Try to link the images in the results container to a new React component that would display detailed info for each Pokémon.
+- Replace the menu with group of checkboxes. 
 - Deploy your site on Netlify
