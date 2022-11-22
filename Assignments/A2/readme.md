@@ -103,6 +103,7 @@ Suggestion structure/schema of the *events* DB:
 
 - You may choose to handle all the errors under one JS error class and just change the error message. Or relate the separate error classes by inheriting from the same parent error class. 
 
+
 # Deliverables
 - YT short 
   - Two minutes max.

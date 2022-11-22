@@ -1,0 +1,33 @@
+[
+  {
+    "event_id": 1,
+    "type": "request",
+    "time": "2022-09-06T04: 45: 42.914",
+    "username": "user1",
+    "token_used": "token1",
+    "event_data": {
+      "route": "api/v1/pokemon/77",
+      "http_request_type": "POST",
+      "ip_address": "61.48.220.123",
+      "query": ""
+    }
+  },
+  {
+    "event_id": 2,
+    "type": "response",
+    "time": "2022-09-06T04: 45: 42.914",
+    "username": "user1",
+    "token_used": "token1",
+    "event_data": {
+      "route": "api/v1/pokemon/77",
+      "http_request_type": "POST",
+      "ip_address": "61.48.220.123",
+      "query": "",
+      "body": {
+        "Error": "InvalidArgumentException",
+        "Message": "Missing field location"
+      },
+      "status_code": 400
+    }
+  }
+]

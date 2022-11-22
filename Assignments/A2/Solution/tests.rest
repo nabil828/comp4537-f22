@@ -1,0 +1,163 @@
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test",
+  "email": "test@test.ca"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+
+
+
+
+
+
+
+
+
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+@ADMIN_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyODNjZDYyODQwN2Y2MTljODlmZmQiLCJpYXQiOjE2Njg0NDkzMDl9.iIUQoxZ4nbtMjj1NaxuV7PpPQ7rGwRoUq7cbT-kgv2M
+
+@NON_ADMIN_TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzcyODNjZDYyODQwN2Y2MTljODlmZmQiLCJpYXQiOjE2Njg0NDkzMDl9.iIUQoxZ4nbtMjj1NaxuV7PpPQ7rGwRoUq7cbT-kgv2M
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+GET http://localhost:6000/api/v1/pokemon?id=77&appid={{ADMIN_TOKEN}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+GET http://localhost:6000/api/v1/pokemon?id=77&appid={{NON_ADMIN_TOKEN}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+POST http://localhost:6000/api/v1/pokemon?appid={{ADMIN_TOKEN}}
+Content-Type: application/json
+
+{
+    "name": {
+      "english": "test",
+      "japanese": "test",
+      "chinese": "test",
+      "french": "test"
+    },
+    "base": {
+      "HP": 50,
+      "Attack": 20,
+      "Defense": 55,
+      "Speed": 30,
+      "Speed Attack": 25,
+      "Speed Defense": 25
+    },
+    "id": 1000,
+    "type": [
+      "Bug"
+    ],
+    "__v": 0
+  }
+
+
+
+
+
+
+### 
+GET http://localhost:5000/logout?appid={{NON_ADMIN_TOKEN}}
+
+
+
+
+
+
+### 
+
+DELETE  http://localhost:6000/api/v1/pokemon?id=1000&appid={{ADMIN_TOKEN}}
+Content-Type: application/json
+
+{
+  "id": 1000
+}

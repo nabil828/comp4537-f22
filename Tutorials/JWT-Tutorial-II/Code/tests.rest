@@ -1,0 +1,44 @@
+###
+
+# @name login
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "test"
+}
+
+###
+
+@NON_ADMIN_ACCESS_TOKEN =  {{login.response.headers.auth-token-access}}
+
+@NON_ADMIN_REFRESH_TOKEN = {{login.response.headers.auth-token-refresh}}
+
+###
+GET http://localhost:6000/api/v1/pokemon?id=77&appid={{NON_ADMIN_ACCESS_TOKEN}}
+
+
+###
+# @name requestNewAccessToken
+
+POST http://localhost:5000/requestNewAccessToken
+Content-Type: application/json
+
+
+{
+  "token": "{{NON_ADMIN_REFRESH_TOKEN}}"
+}
+
+###
+@NON_ADMIN_NEW_ACCESS_TOKEN =  {{requestNewAccessToken.response.headers.auth-token-access}}
+
+###
+GET http://localhost:6000/api/v1/pokemon?id=77&appid={{NON_ADMIN_NEW_ACCESS_TOKEN}}
+
+
+### 
+GET http://localhost:5000/logout?appid={{NON_ADMIN_TOKEN}}
+
+

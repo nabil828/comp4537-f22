@@ -53,6 +53,7 @@
     "mongodb": "^4.9.1",
     "mongodb-connection-string-url": "^2.5.3",
     "mongoose": "^6.6.2",
+    "morgan": "^1.10.0",
     "mpath": "^0.9.0",
     "mquery": "^4.0.3",
     "ms": "^2.0.0",

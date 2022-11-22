@@ -1,0 +1,12 @@
+error codes
+router in EXpress
+router in react
+secuirty packages
+mvc
+deployment of React
+swagger doc
+
+API Keys vs OAuth Tokens vs JSON Web Tokens
+dev. vs prod.
+loading
+mongoose validation
