@@ -1,23 +1,21 @@
 # Assignment 3 - Frontend Mania
 Use your Pokémon API server from A2 or [my solution of A2](https://github.com/nabil828/comp4537repo/tree/main/Assignments/A2/Solution) to bootstrap this assignment.
 # Part I - Dashboard Page for Admin Reports 
-  - **API Administrator Web Interface**
-    
-    Inspired by - https://www.moesif.com/docs/api-dashboards/
-    
-    
-    You should log server endpoints *access* and *usage* events to generate reports upon request. 
+Inspired by - https://www.moesif.com/docs/api-dashboards/
 
-    This will allow admins to access a dashboard to monitor the generated reports.
 
-    The admin dashboard will display the following report:
-    - Unique API users over a period of time
-    - Top API users over period of time
-    - Top users for each Endpoint
-    - 4xx Errors By Endpoint
-    - Recent 4xx/5xx Errors
+You should log server endpoints *access* and *usage* events to generate reports upon request. 
 
-    The admin dashboard web page interface should be accessible using a web login form.
+This will allow admins to access a dashboard to monitor the generated reports.
+
+The admin dashboard will display the following report:
+- Unique API users over a period of time
+- Top API users over period of time
+- Top users for each Endpoint
+- 4xx Errors By Endpoint
+- Recent 4xx/5xx Errors
+
+The admin dashboard web page should be accessible using a web login form.
 
 
 # Part II - Client Pokémon Web App
@@ -40,7 +38,7 @@ Host this app on Netlify.
   So that I view API related analytics 
   ```
   Acceptance Criteria:
-  - The administrator should be able login and logout using a web interface
+  - The administrator should be able login and logout using a web form
   - The logging session should be maintained. Meaning that the admins should not need to re-login every time they access the dashboard web page.
   ---
 - 
@@ -56,7 +54,7 @@ Host this app on Netlify.
     - Top users for each Endpoint
     - 4xx Errors By Endpoint
     - Recent 4xx/5xx Errors
-  - The dashboard webpage should be protected by a login interface.
+  - The dashboard webpage should be protected by a login form.
   - Reports may be displayed using simple HTML table to nice Graphs using 3rd-party JS libraries. 
 
 ##  Part II - Pokémon Search Site
@@ -87,12 +85,12 @@ Host this app on Netlify.
 
 
 # Deliverables
-- 3-minutes max demo for the web interfaces.
+- Three minutes demo YT offline video
 
 - Links
   - GitHub link for code
   - Netlify links for the
-    - API Administrator Web Interface
+    - Dashboard Page for Admin Reports  
     - Pokémon Search site 
 
 ## What to demonstrate in the offline YT video?
