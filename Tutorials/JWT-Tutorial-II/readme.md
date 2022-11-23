@@ -130,3 +130,7 @@ GET http://localhost:5000/logout?appid={{NON_ADMIN_TOKEN}}
 
 
 ```
+
+# Express.js Security Middlewares
+- [helmet](https://www.npmjs.com/package/helmet)
+- [cors](https://www.npmjs.com/package/cors)
