@@ -1,5 +1,5 @@
 # Assignment 3 - Frontend Mania
-Use your Pokémon API server from A2 or my solution of A2 to bootstrap this assignment.
+Use your Pokémon API server from A2 or [my solution of A2](https://github.com/nabil828/comp4537repo/tree/main/Assignments/A2/Solution) to bootstrap this assignment.
 # Part I - Dashboard Page for Admin Reports 
   - **API Administrator Web Interface**
     
