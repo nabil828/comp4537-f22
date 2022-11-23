@@ -99,7 +99,7 @@ Host this app on Netlify.
 The provided user stories
   
 
-# Development tStrategy and Hints
+# Development Strategy and Hints
 to be added
 
 # Rubric
