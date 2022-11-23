@@ -19,8 +19,7 @@ Use your Pokémon API server from A2 or [my solution of A2](https://github.com/n
 
     The admin dashboard web page interface should be accessible using a web login form.
 
----
----
+
 # Part II - Client Pokémon Web App
 ![](https://cdn.discordapp.com/attachments/1016585518840041503/1044716711540174879/image.png)
 Suppose you have registered as a Pokémon API user and you want to build a Pokémon Web App similar to the one we have done in labs 10 and 11.
