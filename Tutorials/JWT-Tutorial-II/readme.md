@@ -136,3 +136,6 @@ GET http://localhost:5000/logout?appid={{NON_ADMIN_TOKEN}}
 - [cors](https://www.npmjs.com/package/cors)
 - [xss](https://www.npmjs.com/package/xss-clean)
 - [express rate limit](https://www.npmjs.com/package/express-rate-limit)
+
+# HTTPS
+- Always to secure end-to-end communication
