@@ -26,7 +26,7 @@ Suppose you have registered as a Pokémon API user and you want to build a Poké
 
 Design this Pokémon web app to enable visitors to at least filter Pokémons by name and/or type. After selecting a Pokémon, the visitor should be able to view a detailed info for each Pokémon.
 
-Host this app on Netlify.
+~~Host this app on Netlify~~.
 
 
 # User Stories/Tests
@@ -89,9 +89,9 @@ Host this app on Netlify.
 
 - Links
   - GitHub link for code
-  - Netlify links for the
-    - Dashboard Page for Admin Reports  
-    - Pokémon Search site 
+  - ~~Netlify links for the~~
+    - ~~Dashboard Page for Admin Reports~~
+    - ~~Pokémon Search site~~
 
 ## What to demonstrate in the offline YT video?
 The provided user stories
@@ -118,7 +118,7 @@ The provided user stories
   Handle the expiration of the request tokens using the referesh token you have received in step 1 
 
 # Part II - Development Strategy and Hints
-- use react router to easily handle displaying the details of the selected Pokemon 
+- use react router to easily handle displaying the details of the selected Pokémon 
 
 
 # Rubric
