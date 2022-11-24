@@ -97,7 +97,7 @@ Host this app on Netlify.
 The provided user stories
   
 
-# Development Strategy and Hints
+# Part I - Development Strategy and Hints
 - Step 1 - **Authentication**
   
   The login form to capture a username and password send them to a your API server. 
@@ -116,6 +116,9 @@ The provided user stories
 - Step 5 - **Refresh Token**
 
   Handle the expiration of the request tokens using the referesh token you have received in step 1 
+
+# Part II - Development Strategy and Hints
+- use react router to easily handle displaying the details of the selected Pokemon 
 
 
 # Rubric
