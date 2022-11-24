@@ -6,7 +6,7 @@ Inspired by - https://www.moesif.com/docs/api-dashboards/
 
 You should log server endpoints *access* and *usage* events to generate reports upon request. 
 
-This will allow admins to access a dashboard to monitor the generated reports.
+This will allow Pokémon API admins to access a dashboard to monitor the generated reports.
 
 The admin dashboard will display the following report:
 - Unique API users over a period of time
