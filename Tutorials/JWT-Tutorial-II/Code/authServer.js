@@ -5,6 +5,8 @@ const dotenv = require("dotenv")
 dotenv.config();
 const userModel = require("./userModel.js")
 const { connectDB } = require("./connectDB.js")
+const cors = require("cors")
+
 
 const {
   PokemonBadRequest,
@@ -31,7 +33,9 @@ const start = asyncWrapper(async () => {
 start()
 
 app.use(express.json())
-
+app.use(cors({
+  exposedHeaders: ['auth-token-access', 'auth-token-refresh']
+}))
 
 const bcrypt = require("bcrypt")
 app.post('/register', asyncWrapper(async (req, res) => {
@@ -45,25 +49,26 @@ app.post('/register', asyncWrapper(async (req, res) => {
 }))
 
 const jwt = require("jsonwebtoken")
-let refreshTokens = []
+let refreshTokens = [] // replace with a db
 app.post('/requestNewAccessToken', asyncWrapper(async (req, res) => {
-  const { token } = req.body
-  if (!token) {
+  // console.log(req.headers);
+  const refreshToken = req.header('auth-token-refresh')
+  if (!refreshToken) {
     throw new PokemonAuthError("No Token: Please provide a token.")
   }
-  if (!refreshTokens.includes(token)) {
-    console.log("token: ", token);
+  if (!refreshTokens.includes(refreshToken)) { // replaced a db access
+    console.log("token: ", refreshToken);
     console.log("refreshTokens", refreshTokens);
     throw new PokemonAuthError("Invalid Token: Please provide a valid token.")
   }
-  jwt.verify(token, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
-    if (err) {
-      throw new PokemonAuthError("Invalid Token: Please provide a valid token.")
-    }
-    const accessToken = jwt.sign({ _id: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '20s' })
+  try {
+    const payload = await jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET)
+    const accessToken = jwt.sign({ user: payload.user }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '10s' })
     res.header('auth-token-access', accessToken)
     res.send("All good!")
-  })
+  } catch (error) {
+    throw new PokemonAuthError("Invalid Token: Please provide a valid token.")
+  }
 }))
 
 app.post('/login', asyncWrapper(async (req, res) => {
@@ -77,14 +82,15 @@ app.post('/login', asyncWrapper(async (req, res) => {
     throw new PokemonAuthError("Password is incorrect")
 
 
-  const accessToken = jwt.sign({ _id: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '20s' })
-  const refreshToken = jwt.sign({ _id: user._id }, process.env.REFRESH_TOKEN_SECRET)
+  const accessToken = jwt.sign({ user: user }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '10s' })
+  const refreshToken = jwt.sign({ user: user }, process.env.REFRESH_TOKEN_SECRET)
   refreshTokens.push(refreshToken)
 
   res.header('auth-token-access', accessToken)
   res.header('auth-token-refresh', refreshToken)
 
-  res.send("All good!")
+  // res.send("All good!")
+  res.send(user)
 }))
 
 
@@ -98,9 +104,3 @@ app.get('/logout', asyncWrapper(async (req, res) => {
   res.send("Logged out")
 }))
 
-
-
-
-
-
-app.use(handleErr)

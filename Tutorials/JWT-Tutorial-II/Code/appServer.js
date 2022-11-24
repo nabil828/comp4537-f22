@@ -49,31 +49,7 @@ const jwt = require("jsonwebtoken")
 // const { findOne } = require("./userModel.js")
 const userModel = require("./userModel.js")
 
-const authUser = asyncWrapper(async (req, res, next) => {
-  // const to ken = req.header('auth-token')
-  const token = req.query.appid
-  if (!token) {
-    throw new PokemonAuthError("No Token: Please provide an appid query parameter.")
-  }
-  // const userWithToken = await userModel.findOne({ token })
-  // if (!userWithToken || userWithToken.token_invalid) {
-  //   throw new PokemonAuthError("Please Login.")
-  // }
-  try {
-    const verified = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
-    next()
-  } catch (err) {
-    throw new PokemonAuthError("Invalid user.")
-  }
-})
 
-const authAdmin = asyncWrapper(async (req, res, next) => {
-  const user = await userModel.findOne({ token: req.query.appid })
-  if (user.role !== "admin") {
-    throw new PokemonAuthError("Access denied")
-  }
-  next()
-})
 
 
 
@@ -82,6 +58,30 @@ app.use(morgan(":method"))
 
 app.use(cors())
 
+
+const authUser = asyncWrapper(async (req, res, next) => {
+  // const token = req.body.appid
+  const token = req.header('auth-token-access')
+
+  if (!token) {
+    // throw new PokemonAuthError("No Token: Please provide an appid query parameter.")
+    throw new PokemonAuthError("No Token: Please provide the access token using the headers.")
+  }
+  try {
+    const verified = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
+    next()
+  } catch (err) {
+    throw new PokemonAuthError("Invalid Token Verification. Log in again.")
+  }
+})
+
+const authAdmin = asyncWrapper(async (req, res, next) => {
+  const payload = jwt.verify(req.header('auth-token-access'), process.env.ACCESS_TOKEN_SECRET)
+  if (payload?.user?.role == "admin") {
+    return next()
+  }
+  throw new PokemonAuthError("Access denied")
+})
 
 app.use(authUser) // Boom! All routes below this line are protected
 app.get('/api/v1/pokemons', asyncWrapper(async (req, res) => {
@@ -106,12 +106,13 @@ app.get('/api/v1/pokemon', asyncWrapper(async (req, res) => {
   else res.json({ errMsg: "Pokemon not found" })
   // } catch (err) { res.json(handleErr(err)) }
 }))
-app.get("*", (req, res) => {
-  // res.json({
-  //   msg: "Improper route. Check API docs plz."
-  // })
-  throw new PokemonNoSuchRouteError("");
-})
+
+// app.get("*", (req, res) => {
+//   // res.json({
+//   //   msg: "Improper route. Check API docs plz."
+//   // })
+//   throw new PokemonNoSuchRouteError("");
+// })
 
 app.use(authAdmin)
 app.post('/api/v1/pokemon/', asyncWrapper(async (req, res) => {
@@ -184,6 +185,12 @@ app.patch('/api/v1/pokemon/:id', asyncWrapper(async (req, res) => {
   // } catch (err) { res.json(handleErr(err)) }
 }))
 
+
+
+app.get('/report', (req, res) => {
+  console.log("Report requested");
+  res.send(`Table ${req.query.id}`)
+})
 
 
 app.use(handleErr)
