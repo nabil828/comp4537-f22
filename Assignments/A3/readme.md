@@ -98,7 +98,25 @@ The provided user stories
   
 
 # Development Strategy and Hints
-to be added
+- Step 1 - **Authentication**
+  
+  The login form to capture a username and password send them to a your API server. 
+- Step 2 - **`cors`**
+
+  Enable `cors` on your server. Make sure `cors` is exposing custom headers. 
+- Step 3 - Conditional Rendering
+  
+  Display the `Dashboard` component if the login is successfu
+  l
+
+- Step 4 - **Authorization**
+
+  Send another AJAX request to get the report(S). Now you have to use the access token you received in Step 1
+
+- Step 5 - **Refresh Token**
+
+  Handle the expiration of the request tokens using the referesh token you have received in step 1 
+
 
 # Rubric
 Coverage of the provided user stories.
