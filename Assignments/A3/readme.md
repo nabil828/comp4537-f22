@@ -66,7 +66,7 @@ Host this app on Netlify.
   ```
 
   Acceptance Criteria:
-  - At least by Pokémon type and name
+  - At least by Pokémon type and/or name
   - The visitor should be able to select more than one type per search.
   - The results should show Pokémon images in a responsive grid.
   - The results should paginated. 
