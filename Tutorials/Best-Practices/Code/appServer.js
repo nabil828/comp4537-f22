@@ -36,7 +36,7 @@ const start = asyncWrapper(async () => {
   // pokeModel = await populatePokemons(pokeSchema);
   pokeModel = mongoose.model('pokemons', pokeSchema);
 
-  app.listen(process.env.pokeServerPORT, (err) => {
+  app.listen(process.env.PORT || process.env.pokeServerPORT, (err) => {
     if (err)
       throw new PokemonDbError(err)
     else
