@@ -12,7 +12,7 @@ const connectDB = async (input) => {
     // console.log("Dropped db");
     // get the data from Github 
   } catch (error) {
-    console.log('db error');
+    console.log('db error ' + error);
   }
 }
 
