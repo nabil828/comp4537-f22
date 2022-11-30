@@ -22,6 +22,12 @@
 - loading
 - Validation
 
+# Testing
+- Unit
+- Integration
+- UI 
+CHeck - https://www.testim.io/blog/unit-test-rest-api/
+
 
 # Typescript
 - safe from bugs (SFB),
