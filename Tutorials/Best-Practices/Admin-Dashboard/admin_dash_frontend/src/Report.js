@@ -25,7 +25,7 @@ function Report({ id, accessToken, setAccessToken, refreshToken }) {
 
   const refreshAccessToken = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/requestNewAccessToken", {}, {
+      const res = await axios.post("https://best-practices-demo-authserver-js.onrender.com/requestNewAccessToken", {}, {
         headers: {
           'auth-token-refresh': refreshToken
         }
