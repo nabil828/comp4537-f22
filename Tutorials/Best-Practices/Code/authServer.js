@@ -20,7 +20,7 @@ const start = asyncWrapper(async () => {
   await connectDB({ "drop": false });
 
 
-  app.listen(process.env.authServerPORT, async (err) => {
+  app.listen(process.env.PORT || process.env.authServerPORT, async (err) => {
     if (err)
       throw new PokemonDbError(err)
     else
