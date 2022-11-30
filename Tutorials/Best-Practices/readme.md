@@ -1,25 +1,27 @@
+# REST
+  - resource naming
+  - caching
+  - compression
 # Backend Best Practices
-## Error codes
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
-## Swagger UI for documentation
-## dev. vs prod.
-## Organize Code
-### Express Router
-### MVC model to
-
+  - Error codes
+  - Swagger UI for documentation
+  - Dev. vs Prod.
+  - Organize Code
+    - Express Router
+    - MVC model to
 # Security
-## API Keys vs OAuth Tokens vs JSON Web Tokens
-
+ - API Keys vs OAuth Tokens vs JSON Web Tokens
 
 # DB
-# mongoose validation
+- mongoose validation
+- mongoose middlewares
 
 # Frontend Best Practices
-## Deployment of React
-## dev. vs prod.
-## React Router
-# loading
-# Validation
+- Deployment of React
+- React Router
+- loading
+- Validation
+
 
 # Typescript
 - safe from bugs (SFB),
@@ -27,6 +29,14 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 - ready for change (RFC).
 
 
-# HTTP Header
-# References- 
-Read More - https://web.mit.edu/6.031/www/sp22/general/#objectives
+
+# References
+- https://restfulapi.net/
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+- https://expressjs.com/en/guide/routing.html
+- https://expressjs.com/en/advanced/best-practice-security.html
+- https://expressjs.com/en/advanced/best-practice-performance.html
+- http://expressjs.com/en/resources/learning.html
+- https://web.mit.edu/6.031/www/sp22/general/#objectives
+- https://developer.mozilla.org/en-US/docs/Web/HTTP
+- https://developer.mozilla.org/en-US/docs/Web/API
