@@ -1,6 +1,7 @@
 # Backend Best Practices
 ## Error codes
-## Swagger for documentation
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+## Swagger UI for documentation
 ## dev. vs prod.
 ## Organize Code
 ### Express Router
@@ -25,5 +26,7 @@
 - easy to understand (ETU), and
 - ready for change (RFC).
 
+
+# HTTP Header
 # References- 
 Read More - https://web.mit.edu/6.031/www/sp22/general/#objectives

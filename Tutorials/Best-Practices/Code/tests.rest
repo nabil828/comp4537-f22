@@ -1,4 +1,4 @@
-@APP_SITE = https://best-practices-demo-authserver-js.onrender.com
+@APP_SITE = https://best-practices-demo-appserver-js.onrender.com
 @AUTH_SITE = https://best-practices-demo-authserver-js.onrender.com
 ###
 # @name login
