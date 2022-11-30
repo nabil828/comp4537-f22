@@ -26,7 +26,8 @@
 - Unit
 - Integration
 - UI 
-CHeck - https://www.testim.io/blog/unit-test-rest-api/
+
+Read more - https://www.testim.io/blog/unit-test-rest-api/
 
 
 # Typescript
