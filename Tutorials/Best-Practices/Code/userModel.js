@@ -36,7 +36,7 @@ const schema = new mongoose.Schema({
   }
 
 })
-
+// adssa
 module.exports = mongoose.model('pokeusers', schema) //pokeUser is the name of the collection in the db
 
 
