@@ -1,0 +1,31 @@
+###
+# @name login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+###
+@ACCESS_TOKEN =  {{login.response.headers.auth-token-access}}
+@REFRESH_TOKEN = {{login.response.headers.auth-token-refresh}}
+###
+GET http://localhost:6001/api/v1/pokemon?id=77&appid
+auth-token-access : {{ACCESS_TOKEN}}
+###
+GET http://localhost:6001/report?id=3
+auth-token-access : {{ACCESS_TOKEN}}
+###
+# @name requestNewAccessToken
+POST http://localhost:5000/requestNewAccessToken
+Content-Type: application/json
+auth-token-refresh : {{REFRESH_TOKEN}}
+###
+@NEW_ACCESS_TOKEN =  {{requestNewAccessToken.response.headers.auth-token-access}}
+###
+GET http://localhost:6001/api/v1/pokemon?id=77
+auth-token-access:{{NEW_ACCESS_TOKEN}}
+
+
+
